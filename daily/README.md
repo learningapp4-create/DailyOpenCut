@@ -1,6 +1,6 @@
 # Daily cuts
 
-Ten-second reference edits for OpenCut theme presets. This file is the index. The web app shows the same list on the home page.
+Ten-second reference edits for OpenCut theme presets. This file is the index. The web app home page plays the cuts. The same list is in the collapsible panel on the left.
 
 Each row is one cut: the theme, the date, what it shows, the footage and its license, and the preset version that was applied.
 

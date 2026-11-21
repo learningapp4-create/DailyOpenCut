@@ -1,14 +1,6 @@
-<table width="100%">
-  <tr>
-    <td align="left" width="120">
-      <img src="https://assets.opencut.app/branding/symbol.svg" alt="OpenCut Logo" width="100" />
-    </td>
-    <td align="right">
-      <h1>OpenCut</h1>
-      <h3 style="margin-top: -10px;">A free and open source video editor for web, desktop, and mobile.</h3>
-    </td>
-  </tr>
-</table>
+# OpenCut
+
+A free and open source video editor for web, desktop, and mobile.
 
 [![Discord](https://img.shields.io/discord/1386309140057690133?label=Discord&logo=discord&logoColor=fff&color=5865F2&style=flat)](https://discord.gg/zmR9N35cjK)
 [![X](https://img.shields.io/badge/follow-%40opencutapp-000?logo=x&logoColor=fff&style=flat)](https://x.com/opencutapp)
@@ -29,7 +21,7 @@ You can still find the previous version at [opencut-app/opencut-classic](https:/
 
 ## Daily cuts
 
-Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). The same index is the home page of the web app. Preset files are in [`presets/`](presets/README.md).
+Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). The web app home page plays those cuts. A collapsible panel on the left holds the same index. Preset files are in [`presets/`](presets/README.md).
 
 ## Development
 
