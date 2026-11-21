@@ -1,0 +1,231 @@
+// OpenCut theme preset. A pipeline loads this file and applies the knobs
+// onto a project. See presets/README.md for how each group lands in the editor.
+// Comments say what the knob does.
+{
+  // Stable id a pipeline passes to the editor. Do not rename it.
+  "id": "genz-adhd",
+  // Semver of this knob set. A daily cut records the version it was made with.
+  "version": "1.0.0",
+  // Browse group on the daily index.
+  "category": "social",
+  // Human name shown on the index and in the editor.
+  "name": "Gen Z ADHD",
+  // One sentence the edit should feel like.
+  "summary": "Jump cuts, a caption chip, and no time to settle.",
+  // Overall look: mood, how crowded the frame is, and the canvas.
+  "style": {
+    // Short intent the pipeline should not contradict.
+    "mood": "fast, captioned, restless",
+    // How many layers may sit on screen. sparse is one picture and one title.
+    "density": "packed",
+    // Surface name: matte, punchy, glossy, pastel, or mono.
+    "finish": "glossy",
+    // Aspect label for humans. The pixels live on canvas.
+    "aspect": "9:16",
+    // Output frame in pixels. Maps to project settings.canvasSize.
+    "canvas": {
+      // Frame width in pixels.
+      "width": 1080,
+      // Frame height in pixels.
+      "height": 1920
+    },
+    // preset for 1920x1080, 1080x1920, 1080x1080, or 1440x1080. Otherwise custom.
+    "canvasSizeMode": "preset"
+  },
+  // How long shots hold, and the playback rate.
+  "pace": {
+    // Length of the finished cut in seconds. Daily references aim at about 10.
+    "targetDurationSeconds": 10,
+    // How long one shot may hold before the next cut.
+    "shotLengthSeconds": {
+      // Shortest hold, in seconds.
+      "min": 0.35,
+      // Longest hold, in seconds.
+      "max": 0.8
+    },
+    // True prefers cuts on a beat. False follows the gesture.
+    "cutOnBeat": true,
+    // Still time after the last action, before the out transition.
+    "holdTailSeconds": 0.15,
+    // Playback rate. Maps to retime.rate. Below 1 is slower.
+    "speed": 1.12,
+    // Keep pitch when speed is not 1. Maps to retime.maintainPitch.
+    "maintainPitch": true
+  },
+  // Palette. This is the design color, not the image grade.
+  "colour": {
+    // Canvas background hex. Used when backgroundBlur is 0.
+    "background": "#0d0d0f",
+    // Primary type color.
+    "ink": "#ffffff",
+    // Secondary type color, used for a credit line.
+    "muted": "#c8c8d0",
+    // One highlight, used for caption chips.
+    "accent": "#ff4d8d",
+    // Canvas background blur, 0 to 100. Above 0 switches the background to blur.
+    "backgroundBlur": 0
+  },
+  // Type system. fontSize is the editor design size, not pixels.
+  "typography": {
+    // Headline fontFamily. The web shell loads Playfair Display.
+    "displayFamily": "Inter",
+    // Secondary fontFamily. Inter is the app body face.
+    "bodyFamily": "Inter",
+    // Headline weight. The text element stores normal or bold.
+    "displayWeight": "bold",
+    // Body weight.
+    "bodyWeight": "bold",
+    // Headline fontStyle.
+    "fontStyle": "normal",
+    // textAlign.
+    "align": "center",
+    // Design size. Pixels = fontSize * canvasHeight / 90. Editor range is 5 to 300.
+    "fontSize": 6.5,
+    // letterSpacing. 0 is the editor default.
+    "letterSpacing": -0.4,
+    // lineHeight multiplier. The editor default is 1.2.
+    "lineHeight": 1,
+    // Transform applied to the lines before they are drawn.
+    "case": "upper",
+    // Chip behind the type. Maps to background.* text params.
+    "textBackground": {
+      // Draw the chip. Captions want this on.
+      "enabled": true,
+      // Chip fill.
+      "color": "#ff4d8d",
+      // Chip corner radius, 0 to 100.
+      "cornerRadius": 8,
+      // Horizontal chip padding.
+      "paddingX": 16,
+      // Vertical chip padding.
+      "paddingY": 8
+    }
+  },
+  // How the picture enters, leaves, and hands off. Expanded into keyframes.
+  "transitions": {
+    // How the cut opens.
+    "in": {
+      // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
+      "kind": "cut",
+      // Length of this transition. 0 is a hard cut.
+      "seconds": 0,
+      // Editor graph-editor easing.
+      "easing": {
+        // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
+        "id": "linear",
+        // Cubic bezier for that builtin.
+        "bezier": [0, 0, 1, 1]
+      }
+    },
+    // How the cut ends.
+    "out": {
+      // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
+      "kind": "cut",
+      // Length of this transition. 0 is a hard cut.
+      "seconds": 0,
+      // Editor graph-editor easing.
+      "easing": {
+        // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
+        "id": "linear",
+        // Cubic bezier for that builtin.
+        "bezier": [0, 0, 1, 1]
+      }
+    },
+    // How two shots hand off.
+    "between": {
+      // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
+      "kind": "cut",
+      // Length of this transition. 0 is a hard cut.
+      "seconds": 0,
+      // Editor graph-editor easing.
+      "easing": {
+        // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
+        "id": "linear",
+        // Cubic bezier for that builtin.
+        "bezier": [0, 0, 1, 1]
+      }
+    }
+  },
+  // Clock the editor stores. Ticks, then the frame rate.
+  "timing": {
+    // MediaTime resolution. Always 120000.
+    "ticksPerSecond": 120000,
+    // Frame rate rational on the project.
+    "fps": {
+      // Frame rate numerator.
+      "numerator": 30,
+      // Frame rate denominator. 1 for integer rates.
+      "denominator": 1
+    }
+  },
+  // Image treatment on the picture, separate from the palette.
+  "grade": {
+    // 1 leaves contrast alone. Above 1 adds punch.
+    "contrast": 1.16,
+    // 1 is the original color. 0 is grey.
+    "saturation": 1.4,
+    // Added brightness. 0 is unchanged. Negative crushes.
+    "brightness": 0.04,
+    // Warmth. 0 is neutral. Positive is warmer.
+    "temperature": 2,
+    // Midtone gamma. 1 is unchanged. Above 1 lifts mids.
+    "gamma": 1.05,
+    // Blur effect intensity, 0 to 100. 0 stays sharp.
+    "blurIntensity": 0
+  },
+  // On-screen words and where they sit.
+  "type": {
+    // Default copy. A cut may replace these lines.
+    "lines": [
+      "wait",
+      "look"
+    ],
+    // Title offset from center as a fraction of height. Positive is down.
+    "positionYFraction": 0.3,
+    // Inset from the side for left or right type, as a fraction of width.
+    "safeMarginFraction": 0.06,
+    // When true, add a second text element with creditText.
+    "credit": false,
+    // Attribution line. Drawn only when credit is true.
+    "creditText": ""
+  },
+  // Scale and drift across the cut.
+  "motion": {
+    // Scale at the first frame.
+    "startScale": 1,
+    // Scale at the last frame. A small rise is a slow push.
+    "endScale": 1.12,
+    // Vertical drift in output pixels. Negative moves the picture up.
+    "positionDriftY": 0,
+    // Easing of the scale and drift.
+    "easing": {
+      // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
+      "id": "pop",
+      // Cubic bezier for that builtin.
+      "bezier": [0.175, 0.885, 0.32, 1.275]
+    },
+    // Constant rotation in degrees. 0 is upright.
+    "rotateDegrees": 0
+  },
+  // How the picture meets the frame: fit, bars, blend, volume.
+  "compositing": {
+    // contain keeps the whole gesture. cover fills the frame and crops.
+    "fit": "cover",
+    // Drop baked-in black bars before fitting.
+    "cropSourceLetterbox": true,
+    // Frame mask, or null when the picture is unmasked.
+    "mask": null,
+    // blendMode. normal is the editor default.
+    "blendMode": "normal",
+    // Source audio level from 0 to 1.
+    "volume": 1
+  },
+  // What changed in each version of these knobs, and why.
+  "changelog": [
+    {
+      "version": "1.0.0",
+      // What changed in the knobs, and why.
+      "note": "Initial knob set. Hard cuts, a caption chip, and a snap zoom. The pace is the style."
+    }
+  ]
+}

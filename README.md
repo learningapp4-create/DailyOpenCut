@@ -27,6 +27,10 @@
 
 You can still find the previous version at [opencut-app/opencut-classic](https://github.com/opencut-app/opencut-classic), which is the one to reach for today. [opencut.app](https://opencut.app) still runs the classic version. The rewrite will live at [new.opencut.app](https://new.opencut.app) until it's ready to take over.
 
+## Daily cuts
+
+Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). The same index is the home page of the web app. Preset files are in [`presets/`](presets/README.md).
+
 ## Development
 
 Install [proto](https://moonrepo.dev/proto) if you haven't already:

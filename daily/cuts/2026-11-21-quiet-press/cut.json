@@ -1,0 +1,19 @@
+{
+  "id": "2026-11-21-quiet-press",
+  "date": "2026-11-21",
+  "title": "Quiet press",
+  "presetId": "minimalistic-homie",
+  "inSeconds": 58.5,
+  "durationSeconds": 10,
+  "lines": ["slow morning", "for one"],
+  "sourceLetterbox": { "width": 480, "height": 272, "x": 0, "y": 44 },
+  "footage": {
+    "mediaId": "commons-use-of-a-coffee-press",
+    "title": "Use of a coffee press",
+    "creator": "Daniel Case, videography by his son",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Use_of_a_coffee_press.ogv",
+    "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Use_of_a_coffee_press.ogv",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  }
+}

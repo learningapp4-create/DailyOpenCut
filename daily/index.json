@@ -1,0 +1,27 @@
+{
+  "title": "Daily cuts",
+  "about": "Ten-second reference edits. Each cut names the theme preset and version a pipeline applied.",
+  "cuts": [
+    {
+      "id": "2026-11-21-quiet-press",
+      "date": "2026-11-21",
+      "theme": "Minimalistic homie",
+      "presetId": "minimalistic-homie",
+      "presetVersion": "1.1.0",
+      "shows": "A hand lifts a French press and pours coffee into a red mug on a kitchen counter.",
+      "footage": {
+        "title": "Use of a coffee press",
+        "creator": "Daniel Case, videography by his son",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Use_of_a_coffee_press.ogv",
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Use_of_a_coffee_press.ogv",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "paths": {
+        "project": "daily/cuts/2026-11-21-quiet-press/project.json",
+        "preview": "daily/cuts/2026-11-21-quiet-press/preview.mp4",
+        "preset": "presets/themes/minimalistic-homie.jsonc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "id": "2026-11-21-quiet-press",
+    "name": "Quiet press",
+    "duration": {
+      "ticks": 1200000
+    },
+    "createdAt": "2026-11-21T00:00:00.000Z",
+    "updatedAt": "2026-11-21T00:00:00.000Z"
+  },
+  "settings": {
+    "fps": {
+      "numerator": 30,
+      "denominator": 1
+    },
+    "canvasSize": {
+      "width": 1080,
+      "height": 1920
+    },
+    "canvasSizeMode": "preset",
+    "background": {
+      "type": "color",
+      "color": "#f3efe6"
+    }
+  },
+  "currentSceneId": "scene-main",
+  "version": 1,
+  "scenes": [
+    {
+      "id": "scene-main",
+      "name": "Main scene",
+      "isMain": true,
+      "bookmarks": [],
+      "createdAt": "2026-11-21T00:00:00.000Z",
+      "updatedAt": "2026-11-21T00:00:00.000Z",
+      "tracks": {
+        "overlay": [
+          {
+            "id": "track-type",
+            "name": "Text track",
+            "type": "text",
+            "hidden": false,
+            "elements": [
+              {
+                "id": "el-title",
+                "type": "text",
+                "name": "Title",
+                "duration": {
+                  "ticks": 1200000
+                },
+                "startTime": {
+                  "ticks": 0
+                },
+                "trimStart": {
+                  "ticks": 0
+                },
+                "trimEnd": {
+                  "ticks": 0
+                },
+                "params": {
+                  "content": "slow morning\nfor one",
+                  "fontSize": 5,
+                  "fontFamily": "Playfair Display",
+                  "color": "#2c261f",
+                  "textAlign": "center",
+                  "fontWeight": "normal",
+                  "fontStyle": "normal",
+                  "textDecoration": "none",
+                  "letterSpacing": 0.4,
+                  "lineHeight": 1.15,
+                  "background.enabled": false,
+                  "background.color": "#f3efe6",
+                  "background.cornerRadius": 0,
+                  "background.paddingX": 16,
+                  "background.paddingY": 10,
+                  "background.offsetX": 0,
+                  "background.offsetY": 0,
+                  "transform.positionX": 0,
+                  "transform.positionY": -730,
+                  "transform.scaleX": 1,
+                  "transform.scaleY": 1,
+                  "transform.rotate": 0,
+                  "opacity": 1,
+                  "blendMode": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "main": {
+          "id": "track-main",
+          "name": "Main",
+          "type": "video",
+          "muted": false,
+          "hidden": false,
+          "elements": [
+            {
+              "id": "el-picture",
+              "type": "video",
+              "mediaId": "commons-use-of-a-coffee-press",
+              "name": "Use of a coffee press",
+              "duration": {
+                "ticks": 1200000
+              },
+              "startTime": {
+                "ticks": 0
+              },
+              "trimStart": {
+                "ticks": 7020000
+              },
+              "trimEnd": {
+                "ticks": 43680
+              },
+              "sourceDuration": {
+                "ticks": 8263680
+              },
+              "isSourceAudioEnabled": true,
+              "retime": {
+                "rate": 1,
+                "maintainPitch": true
+              },
+              "effects": [
+                {
+                  "id": "fx-grade",
+                  "type": "grade",
+                  "enabled": true,
+                  "params": {
+                    "contrast": 1.02,
+                    "saturation": 0.9,
+                    "brightness": 0.02,
+                    "temperature": 6,
+                    "gamma": 1.04,
+                    "blurIntensity": 0
+                  }
+                }
+              ],
+              "masks": [],
+              "animations": {
+                "opacity": {
+                  "keys": [
+                    {
+                      "id": "opacity-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-in",
+                      "time": {
+                        "ticks": 42000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-hold",
+                      "time": {
+                        "ticks": 1152000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-out",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleX": {
+                  "keys": [
+                    {
+                      "id": "scale-x-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-x-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.03,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleY": {
+                  "keys": [
+                    {
+                      "id": "scale-y-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-y-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.03,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                }
+              },
+              "params": {
+                "transform.positionX": 0,
+                "transform.positionY": 0,
+                "transform.scaleX": 1,
+                "transform.scaleY": 1,
+                "transform.rotate": 0,
+                "opacity": 1,
+                "blendMode": "normal",
+                "volume": 0.7
+              }
+            }
+          ]
+        },
+        "audio": []
+      }
+    }
+  ],
+  "daily": {
+    "format": "daily-opencut-cut",
+    "presetId": "minimalistic-homie",
+    "presetVersion": "1.1.0",
+    "presetPath": "presets/themes/minimalistic-homie.jsonc",
+    "fit": "contain",
+    "cropSourceLetterbox": true,
+    "footage": {
+      "mediaId": "commons-use-of-a-coffee-press",
+      "title": "Use of a coffee press",
+      "creator": "Daniel Case, videography by his son",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Use_of_a_coffee_press.ogv",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Use_of_a_coffee_press.ogv",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "inSeconds": 58.5,
+    "durationSeconds": 10,
+    "sourceDurationSeconds": 68.864,
+    "sourceLetterbox": {
+      "width": 480,
+      "height": 272,
+      "x": 0,
+      "y": 44
+    },
+    "lines": [
+      "slow morning",
+      "for one"
+    ],
+    "preview": "daily/cuts/2026-11-21-quiet-press/preview.mp4",
+    "fontStandIn": "Liberation Serif stands in for Playfair Display in this preview.",
+    "render": "node presets/render-preview.mjs daily/cuts/2026-11-21-quiet-press"
+  }
+}
