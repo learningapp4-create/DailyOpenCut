@@ -127,6 +127,21 @@ function probeVideoSize(file) {
 	return { w, h };
 }
 
+function probeHasAudio(file) {
+	const stdout = run("ffprobe", [
+		"-v",
+		"error",
+		"-select_streams",
+		"a",
+		"-show_entries",
+		"stream=codec_type",
+		"-of",
+		"csv=p=0",
+		file,
+	]);
+	return stdout.trim().length > 0;
+}
+
 function temperatureFilter(temperature) {
 	if (temperature === 0) return null;
 	const rs = (temperature / 10) * 0.06;
@@ -257,12 +272,12 @@ function buildVideoFilter({ preset, cut, sourceUsed, sourceSize }) {
 	return filters.join(",");
 }
 
-function buildAudioFilter({ preset, cut, sourceUsed }) {
-	const filters = [
-		`atrim=start=${cut.inSeconds}:duration=${sourceUsed}`,
-		"asetpts=PTS-STARTPTS",
-	];
-	if (preset.pace.speed !== 1) filters.push(`atempo=${preset.pace.speed}`);
+function buildAudioFilter({ preset, cut, sourceUsed, synthetic }) {
+	const filters = [];
+	if (!synthetic) {
+		filters.push(`atrim=start=${cut.inSeconds}:duration=${sourceUsed}`, "asetpts=PTS-STARTPTS");
+		if (preset.pace.speed !== 1) filters.push(`atempo=${preset.pace.speed}`);
+	}
 	filters.push(`volume=${preset.compositing.volume}`);
 	if (preset.transitions.in.kind !== "cut" && preset.transitions.in.seconds > 0) {
 		filters.push(`afade=t=in:st=0:d=${preset.transitions.in.seconds}`);
@@ -528,15 +543,29 @@ const previewAbs = resolve(root, previewRel);
 mkdirSync(dirname(previewAbs), { recursive: true });
 
 const videoFilter = buildVideoFilter({ preset, cut, sourceUsed, sourceSize });
-const audioFilter = buildAudioFilter({ preset, cut, sourceUsed });
+const hasAudio = probeHasAudio(source);
+const audioFilter = buildAudioFilter({ preset, cut, sourceUsed, synthetic: !hasAudio });
 const fps = preset.timing.fps.numerator / preset.timing.fps.denominator;
+const inputArgs = ["-i", source];
+let audioLabel = "0:a";
+if (!hasAudio) {
+	inputArgs.push(
+		"-f",
+		"lavfi",
+		"-t",
+		String(cut.durationSeconds),
+		"-i",
+		"anullsrc=channel_layout=stereo:sample_rate=48000",
+	);
+	audioLabel = "1:a";
+	console.log("source has no audio; laying silence at the preset volume");
+}
 
 run("ffmpeg", [
 	"-y",
-	"-i",
-	source,
+	...inputArgs,
 	"-filter_complex",
-	`[0:v]${videoFilter}[v];[0:a]${audioFilter}[a]`,
+	`[0:v]${videoFilter}[v];[${audioLabel}]${audioFilter}[a]`,
 	"-map",
 	"[v]",
 	"-map",
@@ -564,7 +593,9 @@ run("ffmpeg", [
 	"-metadata",
 	`artist=${cut.footage.creator}`,
 	"-metadata",
-	`comment=Picture and sound from ${cut.footage.title}. ${cut.footage.license}. ${cut.footage.sourceUrl}`,
+	hasAudio
+		? `comment=Picture and sound from ${cut.footage.title}. ${cut.footage.license}. ${cut.footage.sourceUrl}`
+		: `comment=Picture from ${cut.footage.title}. The source has no audio; this track is silence. ${cut.footage.license}. ${cut.footage.sourceUrl}`,
 	previewAbs,
 ]);
 

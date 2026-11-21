@@ -5,7 +5,7 @@
   // Stable id a pipeline passes to the editor. Do not rename it.
   "id": "cinematic-bars",
   // Semver of this knob set. A daily cut records the version it was made with.
-  "version": "1.0.0",
+  "version": "1.1.0",
   // Browse group on the daily index.
   "category": "cinema",
   // Human name shown on the index and in the editor.
@@ -108,7 +108,7 @@
       // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
       "kind": "dissolve",
       // Length of this transition. 0 is a hard cut.
-      "seconds": 0.8,
+      "seconds": 0.45,
       // Editor graph-editor easing.
       "easing": {
         // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
@@ -122,7 +122,7 @@
       // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
       "kind": "dissolve",
       // Length of this transition. 0 is a hard cut.
-      "seconds": 0.8,
+      "seconds": 0.5,
       // Editor graph-editor easing.
       "easing": {
         // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
@@ -161,15 +161,15 @@
   // Image treatment on the picture, separate from the palette.
   "grade": {
     // 1 leaves contrast alone. Above 1 adds punch.
-    "contrast": 1.1,
+    "contrast": 1.06,
     // 1 is the original color. 0 is grey.
-    "saturation": 0.78,
+    "saturation": 0.88,
     // Added brightness. 0 is unchanged. Negative crushes.
-    "brightness": -0.02,
+    "brightness": 0.02,
     // Warmth. 0 is neutral. Positive is warmer.
-    "temperature": -2,
+    "temperature": 1,
     // Midtone gamma. 1 is unchanged. Above 1 lifts mids.
-    "gamma": 0.98,
+    "gamma": 1.03,
     // Blur effect intensity, 0 to 100. 0 stays sharp.
     "blurIntensity": 0
   },
@@ -181,7 +181,7 @@
       "the frame"
     ],
     // Title offset from center as a fraction of height. Positive is down.
-    "positionYFraction": 0.34,
+    "positionYFraction": 0.28,
     // Inset from the side for left or right type, as a fraction of width.
     "safeMarginFraction": 0.08,
     // When true, add a second text element with creditText.
@@ -233,6 +233,11 @@
       "version": "1.0.0",
       // What changed in the knobs, and why.
       "note": "Uses the cinematic-bars mask. Height 0.74 is the open window. The editor's own default builder uses 0.6."
+    },
+    {
+      "version": "1.1.0",
+      // What changed in the knobs, and why.
+      "note": "The 10s conform of the Vetla fog drone showed the problems. positionYFraction 0.34 put the second line across the lower bar: the capitals of OVER VETLA sat on the hard edge at y=940. Contrast 1.1, saturation 0.78, brightness -0.02, temperature -2, and gamma 0.98 crushed the trees and turned the morning fog grey. Dissolves of 0.8s hid the start and the end of the drift. 1.1.0 lifts the title to 0.28 so both lines sit in the open window, opens the grade to contrast 1.06, saturation 0.88, brightness 0.02, temperature 1, and gamma 1.03, and shortens the dissolves to 0.45s in and 0.5s out. The 24 fps hold, the 0.74 bars, and the 5 percent push stay."
     }
   ]
 }
