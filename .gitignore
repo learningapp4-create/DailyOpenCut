@@ -9,3 +9,7 @@ docs/
 
 # moon runtime cache
 .moon/cache/
+
+# music video rushes and intermediates
+MV/rushes/
+MV/work/

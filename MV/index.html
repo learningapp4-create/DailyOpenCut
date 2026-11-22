@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESSENCE — the essence of humanity in machines</title>
+  <meta name="description" content="A music video in progress. Open footage, cut toward three minutes, about the essence of humanity in machines.">
+  <style>
+    :root {
+      --bg: #070809;
+      --paper: #e7e1d6;
+      --dim: #9c968c;
+      --amber: #e2a15a;
+      --line: #242220;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 420px at 50% -10%, rgba(143, 208, 203, 0.08), transparent 60%),
+        radial-gradient(700px 380px at 50% 120%, rgba(226, 161, 90, 0.07), transparent 55%),
+        var(--bg);
+      color: var(--paper);
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    }
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+    .kicker {
+      margin: 0 0 18px;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    h1 {
+      margin: 0;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 8vw, 4.6rem);
+      letter-spacing: 0.28em;
+      line-height: 1;
+    }
+    .theme {
+      margin: 14px 0 28px;
+      color: var(--dim);
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+    video {
+      display: block;
+      width: 100%;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .meter { margin-top: 18px; }
+    .meter-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--dim);
+    }
+    .track {
+      margin-top: 8px;
+      height: 2px;
+      background: #2a2724;
+    }
+    .fill {
+      height: 100%;
+      width: 0;
+      background: var(--amber);
+    }
+    .movement {
+      margin: 14px 0 0;
+      font-size: 1rem;
+    }
+    .note {
+      margin: 10px 0 0;
+      color: var(--dim);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    details { margin-top: 28px; }
+    summary {
+      cursor: pointer;
+      color: var(--dim);
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    ul { list-style: none; padding: 0; margin: 16px 0 0; }
+    li { margin: 0 0 12px; line-height: 1.4; }
+    li a { color: var(--paper); }
+    .lic { color: var(--dim); }
+    .fine {
+      color: var(--dim);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">MV / 001</p>
+    <h1>ESSENCE</h1>
+    <p class="theme">the essence of humanity in machines</p>
+    <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="ESSENCE, a music video in progress">
+      <source src="essence.mp4" type="video/mp4">
+    </video>
+    <div class="meter" aria-hidden="true">
+      <div class="meter-labels"><span id="now">—</span><span id="goal">3:00</span></div>
+      <div class="track"><div class="fill" id="fill"></div></div>
+    </div>
+    <p class="movement" id="movement">Movement I</p>
+    <p class="note">Open footage, recut, with a score written for the picture. This cut grows toward three minutes.</p>
+    <details>
+      <summary>Footage and score</summary>
+      <ul id="credits"></ul>
+      <p class="fine" id="fine"></p>
+    </details>
+  </main>
+  <script src="cut.js"></script>
+  <script>
+    (function () {
+      var cut = window.CUT;
+      if (!cut) return;
+      function clock(seconds) {
+        seconds = Math.round(seconds);
+        var m = Math.floor(seconds / 60);
+        var s = String(seconds % 60).padStart(2, "0");
+        return m + ":" + s;
+      }
+      document.getElementById("now").textContent = clock(cut.durationSeconds);
+      document.getElementById("goal").textContent = clock(cut.targetSeconds);
+      var ratio = Math.max(0, Math.min(1, cut.durationSeconds / cut.targetSeconds));
+      document.getElementById("fill").style.width = (ratio * 100) + "%";
+      document.getElementById("movement").textContent =
+        "Movement " + cut.movement + "  ·  " + cut.movementTitle;
+      var list = document.getElementById("credits");
+      (cut.credits || []).forEach(function (item) {
+        var li = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = item.url;
+        link.textContent = item.title;
+        li.appendChild(link);
+        li.appendChild(document.createTextNode(" — " + item.author + " "));
+        var lic = document.createElement("span");
+        lic.className = "lic";
+        lic.textContent = item.license;
+        li.appendChild(lic);
+        list.appendChild(li);
+      });
+      document.getElementById("fine").textContent =
+        "Picture only was taken from the footage. None of the original sound is in the film. The video file is " +
+        cut.filmLicense + " because some of the footage is share-alike. This page is part of DailyOpenCut.";
+    })();
+  </script>
+</body>
+</html>
