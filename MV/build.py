@@ -44,8 +44,8 @@ GRADES = {
         "eq=contrast=1.16:brightness=0.02:gamma=1.05:saturation=1.05"
     ),
     "warm": (
-        "eq=contrast=1.2:brightness=-0.02:saturation=1.08:gamma=0.96,"
-        "colorbalance=rs=0.06:bs=0.08:rh=0.14:gh=-0.02:bh=0.06"
+        "eq=contrast=1.32:brightness=-0.07:saturation=1.18:gamma=0.82,"
+        "colorbalance=rs=0.02:bs=0.14:rh=0.20:gh=-0.08:bh=0.02"
     ),
     "data": (
         "eq=contrast=1.35:brightness=-0.08:saturation=1.45:gamma=0.82,"
@@ -183,13 +183,14 @@ FOOTAGE = [
 SHOTS = [
     dict(id="open", footage="landeron", start=38.0, length=6, grade="machine", x=0.50, y=0.46, drift=0.06, punch=360, fade_in=0.8),
     dict(id="finger", footage="actuator", start=1.0, length=6, grade="machine", x=0.48, y=0.42, drift=-0.06, punch=420),
-    dict(id="mill", footage="gear", start=0.6, length=6, speed=1.04, grade="machine", x=0.70, y=0.48, drift=0.06, punch=760),
+    # The mill is a sunlit barn under this grade. The watch returns on another wheel.
+    dict(id="jewel", footage="landeron", start=20.0, length=6, grade="machine", x=0.62, y=0.38, drift=0.04, punch=480),
     dict(id="arms", footage="baxter", start=12.0, length=6, speed=1.25, grade="machine", x=0.50, y=0.18, punch=900, precrop="iw*0.78:ih:iw*0.11:0"),
     dict(id="reach", footage="hands", start=39.0, length=6, grade="human", x=0.48, y=0.46, punch=180),
     dict(id="data", footage="piano", start=2.0, length=6, grade="data", x=0.50, y=0.38, drift=0.04, punch=240),
     dict(id="press", footage="press", start=0.3, length=3, grade="warm", x=0.46, y=0.42, punch=480),
-    dict(id="printer", footage="press", start=7.0, length=3, grade="warm", x=0.55, y=0.40, drift=-0.04, punch=280),
-    dict(id="thread", footage="sew", start=0.8, length=3, grade="warm", x=0.58, y=0.40, punch=640),
+    dict(id="printer", footage="press", start=7.0, length=3, grade="warm", x=0.16, y=0.62, punch=860),
+    dict(id="thread", footage="sew", start=0.8, length=3, grade="warm", x=0.55, y=0.62, punch=1100),
     dict(id="through", footage="landeron", start=55.0, length=6, grade="machine", x=0.52, y=0.44, drift=0.05, punch=400,
          over=dict(footage="hands", start=76.0, grade="human", x=0.50, y=0.42, punch=160)),
     dict(id="organ", footage="hdd", start=3.5, length=6, grade="machine", x=0.50, y=0.30, punch=360),
@@ -199,7 +200,7 @@ SHOTS = [
     dict(id="palm", footage="actuator", start=3.5, length=6, grade="machine", x=0.46, y=0.40, drift=0.04, punch=480,
          over=dict(footage="hands", start=118.0, grade="human", x=0.50, y=0.48, punch=200)),
     dict(id="memory", footage="landeron", start=8.0, length=6, speed=0.9, grade="machine_warm", x=0.48, y=0.50, drift=-0.04, punch=300),
-    dict(id="water", footage="hands", start=239.0, length=6, grade="human", x=0.50, y=0.62, punch=220, fade_out=2.2),
+    dict(id="water", footage="hands", start=223.5, length=6, grade="human", x=0.50, y=0.46, punch=80, fade_out=2.2),
 ]
 
 
@@ -443,7 +444,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 2,
+        "version": 3,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,

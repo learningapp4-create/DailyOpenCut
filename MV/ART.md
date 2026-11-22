@@ -18,6 +18,8 @@ One frame: 1280×720, 24 fps. Hard cuts. Light grain, a soft vignette.
 
 Screen-blend only the hands film over a machine. The black void drops out, so skin sits inside metal. That blend is the sentence of the film. Do not blend arbitrary shots.
 
+The Preston mill stays out of Movement I. Under this grade it is a sunlit barn. The watch comes back on a different wheel instead. The print shop stays on the red rollers, not the white wall or the man's face. The last shot is the cupped hands, not the bowl.
+
 The word ESSENCE appears once, early, and leaves. No other type on the picture.
 
 ## Time

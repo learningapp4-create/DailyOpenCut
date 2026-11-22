@@ -7,7 +7,7 @@ window.CUT = {
   "targetSeconds": 180,
   "movement": "I",
   "movementTitle": "the machine remembers a hand",
-  "version": 2,
+  "version": 3,
   "rendered": "2026-11-22",
   "filmLicense": "CC BY-SA 4.0",
   "credits": [
@@ -28,12 +28,6 @@ window.CUT = {
       "author": "Fletcher6",
       "license": "CC BY 4.0",
       "url": "https://commons.wikimedia.org/wiki/File:Hard_Disk_Actuator.ogv"
-    },
-    {
-      "title": "Preston Mill gear in action",
-      "author": "Magnus Hagdorn",
-      "license": "CC BY-SA 2.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Preston_Mill_gear_in_action.webm"
     },
     {
       "title": "Baxter robot moving objects with two arms",
