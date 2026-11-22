@@ -7,7 +7,7 @@ window.CUT = {
   "targetSeconds": 180,
   "movement": "I",
   "movementTitle": "the machine remembers a hand",
-  "version": 13,
+  "version": 14,
   "rendered": "2026-11-22",
   "filmLicense": "CC BY-SA 4.0",
   "credits": [
