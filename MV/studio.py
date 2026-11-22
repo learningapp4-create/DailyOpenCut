@@ -66,6 +66,23 @@ GRADES = {
         "eq=contrast=1.24:brightness=-0.01:saturation=1.18:gamma=0.96,"
         "colorbalance=rs=0.10:gs=0.02:bs=-0.12:rh=0.20:gh=0.04:bh=-0.14"
     ),
+    # Wet, wrong, and loud enough for a short that has to earn the next three seconds.
+    "void": (
+        "eq=contrast=1.58:brightness=-0.10:saturation=0.35:gamma=0.72,"
+        "colorbalance=rs=-0.06:bs=0.08:rh=0.26:gh=-0.12:bh=0.20"
+    ),
+    "acid": (
+        "eq=contrast=1.46:brightness=-0.05:saturation=1.75:gamma=0.82,"
+        "colorbalance=rs=-0.14:gs=0.16:bs=-0.08:rh=0.02:gh=0.22:bh=-0.12"
+    ),
+    "pulse": (
+        "eq=contrast=1.52:brightness=-0.07:saturation=1.42:gamma=0.78,"
+        "colorbalance=rs=0.18:gs=-0.08:bs=-0.04:rh=0.30:gh=-0.14:bh=0.08"
+    ),
+    "strike": (
+        "eq=contrast=1.70:brightness=0.02:saturation=1.20:gamma=0.70,"
+        "colorbalance=rs=0.04:bs=0.16:rh=0.22:gh=0.02:bh=0.24"
+    ),
 }
 ABERRATION = {
     "night": "rgbashift=rh=3:bh=-3",
@@ -77,6 +94,10 @@ ABERRATION = {
     "chrome": "rgbashift=rh=3:bh=-3",
     "phosphor": "rgbashift=rh=2:bh=-2",
     "amber": "rgbashift=rh=2:bh=-2",
+    "void": "rgbashift=rh=7:bh=-7",
+    "acid": "rgbashift=rh=4:bh=-3",
+    "pulse": "rgbashift=rh=6:bh=-5",
+    "strike": "rgbashift=rh=8:gv=-5:bh=-6",
 }
 # Display-resolution scanlines. Commas inside geq are escaped for the filtergraph.
 SCAN = {
@@ -130,6 +151,9 @@ def plate_filter(shot: dict, grade: str) -> str:
         f"setpts=PTS/{speed:.4f}",
         f"fps={FPS}",
     ]
+    if shot.get("ghost"):
+        # A short smear, so a jellyfish or a skin flash leaves a second body.
+        parts.append("tblend=all_mode=average:all_opacity=0.62")
     if shot.get("precrop"):
         parts.append(f"crop={shot['precrop']}")
     if shot.get("void") == "white":
@@ -151,6 +175,8 @@ def plate_filter(shot: dict, grade: str) -> str:
     parts.append("unsharp=5:5:0.45:5:5:0.0")
     if grade in ABERRATION:
         parts.append(ABERRATION[grade])
+    if shot.get("hit"):
+        parts.append("rgbashift=rh=11:gv=-6:bh=-9")
     if grade in SCAN:
         parts.append(SCAN[grade])
     parts.append("vignette=PI/5")
@@ -603,7 +629,7 @@ def write_page(film: dict) -> None:
 
 PAGES = (
     ("essence", "ESSENCE"),
-    ("kowloon", "KOWLOON"),
+    ("ooze", "OOZE"),
     ("ninety", "NINETY"),
     ("chrome", "CHROME"),
     ("phosphor", "PHOSPHOR"),

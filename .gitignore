@@ -10,8 +10,6 @@ docs/
 # moon runtime cache
 .moon/cache/
 
-# music video rushes and intermediates
+# downloaded rushes and intermediate plates for the MV samples
 MV/rushes/
-MV/work/
-MV/*/work/
-MV/__pycache__/
+MV/**/work/

@@ -54,4 +54,4 @@ Leave out anything with a burned-in watermark, a speed badge, a talking-head exp
 
 ## Other samples
 
-KOWLOON, NINETY, CHROME, and PHOSPHOR are separate 90-second films in their own folders. They are finished samples, not extra movements of this one. Do not recut them into ESSENCE, and do not change this grade to match theirs.
+OOZE, NINETY, CHROME, and PHOSPHOR are separate 90-second films in their own folders. They are finished samples, not extra movements of this one. Do not recut them into ESSENCE, and do not change this grade to match theirs.
