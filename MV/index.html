@@ -30,6 +30,17 @@
       margin: 0 auto;
       padding: 48px 0 72px;
     }
+    .samples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 0 0 22px;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+    }
+    .samples a { color: var(--dim); text-decoration: none; }
+    .samples a[aria-current="page"] { color: var(--amber); }
     .kicker {
       margin: 0 0 18px;
       font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
@@ -109,6 +120,13 @@
 </head>
 <body>
   <main>
+    <nav class="samples" aria-label="Samples">
+      <a href="./" aria-current="page">ESSENCE</a>
+      <a href="kowloon/">KOWLOON</a>
+      <a href="ninety/">NINETY</a>
+      <a href="chrome/">CHROME</a>
+      <a href="phosphor/">PHOSPHOR</a>
+    </nav>
     <p class="kicker">MV / 001</p>
     <h1>ESSENCE</h1>
     <p class="theme">the essence of humanity in machines</p>

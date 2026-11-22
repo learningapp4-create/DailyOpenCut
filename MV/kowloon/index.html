@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KOWLOON — Hong Kong, rain on the glass</title>
+  <meta name="description" content="KOWLOON, a 90-second sample. Hong Kong, rain on the glass.">
+  <style>
+    :root {
+      --bg: #07080c;
+      --paper: #e7f4f3;
+      --dim: #8aa4aa;
+      --amber: #5ce1e6;
+      --line: #1c2430;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 420px at 50% -10%, rgba(92, 225, 230, 0.14), transparent 60%),
+        radial-gradient(700px 380px at 80% 120%, rgba(255, 43, 214, 0.07), transparent 55%),
+        var(--bg);
+      color: var(--paper);
+      font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    }
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+    .samples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 0 0 22px;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+    }
+    .samples a { color: var(--dim); text-decoration: none; }
+    .samples a[aria-current="page"] { color: var(--amber); }
+    .kicker {
+      margin: 0 0 18px;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    h1 {
+      margin: 0;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-weight: 650;
+      font-size: clamp(2.2rem, 7vw, 3.8rem);
+      letter-spacing: 0.16em;
+      line-height: 1;
+    }
+    .theme {
+      margin: 14px 0 28px;
+      color: var(--dim);
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+    video {
+      display: block;
+      width: 100%;
+      background: #000;
+      border: 1px solid var(--line);
+    }
+    .meter { margin-top: 18px; }
+    .meter-labels {
+      display: flex;
+      justify-content: space-between;
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--dim);
+    }
+    .track { margin-top: 8px; height: 2px; background: #2a2724; }
+    .fill { height: 100%; width: 100%; background: var(--amber); }
+    .movement { margin: 14px 0 0; font-size: 1rem; }
+    .note {
+      margin: 10px 0 0;
+      color: var(--dim);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    details { margin-top: 28px; }
+    summary {
+      cursor: pointer;
+      color: var(--dim);
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    ul { list-style: none; padding: 0; margin: 16px 0 0; }
+    li { margin: 0 0 12px; line-height: 1.4; }
+    li a { color: var(--paper); }
+    .lic { color: var(--dim); }
+    .fine { color: var(--dim); font-size: 0.92rem; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="samples" aria-label="Samples">
+      <a href="../index.html">ESSENCE</a>
+      <a href="../kowloon/" aria-current="page">KOWLOON</a>
+      <a href="../ninety/">NINETY</a>
+      <a href="../chrome/">CHROME</a>
+      <a href="../phosphor/">PHOSPHOR</a>
+    </nav>
+    <p class="kicker">MV / 002</p>
+    <h1>KOWLOON</h1>
+    <p class="theme">Hong Kong, rain on the glass</p>
+    <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="KOWLOON, a 90-second sample">
+      <source src="kowloon.mp4" type="video/mp4">
+    </video>
+    <div class="meter" aria-hidden="true">
+      <div class="meter-labels"><span id="now">1:30</span><span>sample</span></div>
+      <div class="track"><div class="fill" id="fill"></div></div>
+    </div>
+    <p class="movement" id="movement">the harbor keeps the lights on</p>
+    <p class="note">Open footage, recut, with a score written for the picture. A finished minute and a half.</p>
+    <details>
+      <summary>Footage and score</summary>
+      <ul id="credits"></ul>
+      <p class="fine" id="fine"></p>
+    </details>
+  </main>
+  <script src="cut.js"></script>
+  <script>
+    (function () {
+      var cut = window.CUT;
+      if (!cut) return;
+      function clock(seconds) {
+        seconds = Math.round(seconds);
+        return Math.floor(seconds / 60) + ":" + String(seconds % 60).padStart(2, "0");
+      }
+      document.getElementById("now").textContent = clock(cut.durationSeconds);
+      var list = document.getElementById("credits");
+      (cut.credits || []).forEach(function (item) {
+        var li = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = item.url;
+        link.textContent = item.title;
+        li.appendChild(link);
+        li.appendChild(document.createTextNode(" — " + item.author + " "));
+        var lic = document.createElement("span");
+        lic.className = "lic";
+        lic.textContent = item.license;
+        li.appendChild(lic);
+        list.appendChild(li);
+      });
+      document.getElementById("fine").textContent =
+        "Picture only was taken from the footage. None of the original sound is in the film. The video file is " +
+        cut.filmLicense + " because some of the footage is share-alike. This page is part of DailyOpenCut.";
+    })();
+  </script>
+</body>
+</html>

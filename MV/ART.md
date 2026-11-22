@@ -49,3 +49,7 @@ Leave out anything with a burned-in watermark, a speed badge, a talking-head exp
 ## Build
 
 `python3 build.py` from this folder. Rushes download into `rushes/` and are not committed. The page reads `cut.js`, which the build rewrites from the real duration.
+
+## Other samples
+
+KOWLOON, NINETY, CHROME, and PHOSPHOR are separate 90-second films in their own folders. They are finished samples, not extra movements of this one. Do not recut them into ESSENCE, and do not change this grade to match theirs.

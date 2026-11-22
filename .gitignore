@@ -13,3 +13,5 @@ docs/
 # music video rushes and intermediates
 MV/rushes/
 MV/work/
+MV/*/work/
+MV/__pycache__/
