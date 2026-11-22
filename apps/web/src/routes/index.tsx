@@ -12,6 +12,8 @@ import {
 } from "#/presets/catalog.ts"
 import previewUrl from "../../../../daily/cuts/2026-11-21-quiet-press/preview.mp4"
 import captionsUrl from "../../../../daily/cuts/2026-11-21-quiet-press/captions.vtt?url"
+import fogPreviewUrl from "../../../../daily/cuts/2026-11-21-fog-hold/preview.mp4"
+import fogCaptionsUrl from "../../../../daily/cuts/2026-11-21-fog-hold/captions.vtt?url"
 
 export const Route = createFileRoute("/")({
 	head: () => ({
@@ -24,6 +26,10 @@ const cutMedia: Record<string, { video: string; captions: string }> = {
 	"2026-11-21-quiet-press": {
 		video: previewUrl,
 		captions: captionsUrl,
+	},
+	"2026-11-21-fog-hold": {
+		video: fogPreviewUrl,
+		captions: fogCaptionsUrl,
 	},
 }
 

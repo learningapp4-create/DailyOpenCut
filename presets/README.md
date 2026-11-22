@@ -5,6 +5,7 @@ JSONC files a pipeline or the editor can load. Each file is one theme. Comments 
 ```sh
 node presets/load.mjs
 node presets/render-preview.mjs daily/cuts/2026-11-21-quiet-press
+node presets/render-preview.mjs daily/cuts/2026-11-21-fog-hold
 ```
 
 ## How a preset lands in a project
@@ -35,4 +36,4 @@ The rewrite's editor model, carried over from the current app, is a project with
 | `opencut-editorial` | Playfair Display, Inter, and the neutral palette already used by the web shell. |
 | `cinematic-bars` | The cinematic-bars mask, at 24 fps. |
 
-`minimalistic-homie` is at 1.1.0. The changelog in that file says what the first 10 second conform changed.
+`minimalistic-homie` is at 1.1.0. The changelog in that file says what the first 10 second conform changed. `cinematic-bars` is at 1.1.0. The changelog in that file says what the fog hold changed.

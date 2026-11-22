@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-21-fog-hold",
+  "date": "2026-11-21",
+  "title": "Fog hold",
+  "presetId": "cinematic-bars",
+  "inSeconds": 2,
+  "durationSeconds": 10,
+  "lines": ["morning fog", "over vetla"],
+  "footage": {
+    "mediaId": "commons-drone-foggy-vetla",
+    "title": "Drone video of foggy Vetla village in Estonia",
+    "creator": "Sillerkiil",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Drone_video_of_foggy_Vetla_village_in_Estonia.ogv",
+    "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Drone_video_of_foggy_Vetla_village_in_Estonia.ogv",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  }
+}
