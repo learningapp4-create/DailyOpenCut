@@ -203,7 +203,8 @@ SHOTS = [
     dict(id="hold", footage="hands", start=199.0, length=6, grade="human", x=0.50, y=0.44, punch=200),
     dict(id="palm", footage="actuator", start=3.5, length=6, grade="machine", x=0.46, y=0.40, drift=0.04, punch=480,
          over=dict(footage="hands", start=118.0, grade="human", x=0.50, y=0.48, punch=200)),
-    dict(id="memory", footage="landeron", start=8.0, length=6, speed=0.9, grade="machine_warm", x=0.48, y=0.50, drift=-0.04, punch=300),
+    # The sharp gears and the jewel. The focus pull in the middle of the earlier window stays out.
+    dict(id="memory", footage="landeron", start=12.2, length=6, speed=0.9, grade="machine_warm", x=0.42, y=0.48, drift=-0.03, punch=220),
     dict(id="water", footage="hands", start=223.5, length=6, grade="human", x=0.50, y=0.46, punch=80, fade_out=2.2),
 ]
 
@@ -448,7 +449,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 7,
+        "version": 8,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,
