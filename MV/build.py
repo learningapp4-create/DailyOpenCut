@@ -185,7 +185,8 @@ SHOTS = [
     dict(id="finger", footage="actuator", start=1.0, length=6, grade="machine", x=0.48, y=0.42, drift=-0.06, punch=420),
     # The mill is a sunlit barn under this grade. The watch returns on another wheel.
     dict(id="jewel", footage="landeron", start=20.0, length=6, grade="machine", x=0.62, y=0.38, drift=0.04, punch=480),
-    dict(id="arms", footage="baxter", start=12.0, length=6, speed=1.25, grade="machine", x=0.50, y=0.18, punch=900, precrop="iw*0.78:ih:iw*0.11:0"),
+    # Both arms and the gripper. The face screen drops out. A wall strip stays at the right, because a tighter crop loses the arm while it moves.
+    dict(id="arms", footage="baxter", start=12.0, length=6, speed=1.25, grade="machine", x=0.34, y=0.30, punch=1300, precrop="iw*0.78:ih:iw*0.11:0"),
     dict(id="reach", footage="hands", start=39.0, length=6, grade="human", x=0.48, y=0.46, punch=180),
     dict(id="data", footage="piano", start=2.0, length=6, grade="data", x=0.50, y=0.38, drift=0.04, punch=240),
     dict(id="press", footage="press", start=0.3, length=3, grade="warm", x=0.46, y=0.42, punch=480),
@@ -444,7 +445,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 3,
+        "version": 4,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,
