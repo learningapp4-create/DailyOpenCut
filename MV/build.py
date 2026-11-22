@@ -202,7 +202,8 @@ SHOTS = [
     # Hands on the gate. The face and the warning sign stay out. The hands leave in the last second; the mechanism stays.
     dict(id="gate", footage="projector", start=32.0, length=6, grade="warm", x=0.26, y=0.62, punch=1000),
     dict(id="hold", footage="hands", start=199.0, length=6, grade="human", x=0.50, y=0.44, punch=200),
-    dict(id="palm", footage="actuator", start=3.5, length=6, grade="machine", x=0.46, y=0.40, drift=0.04, punch=480,
+    # The hand inside the arm. The desk stays out. A pale edge remains at the left, because the arm crosses it.
+    dict(id="palm", footage="actuator", start=3.5, length=6, grade="machine", x=0.80, y=0.14, punch=1200,
          over=dict(footage="hands", start=118.0, grade="human", x=0.50, y=0.48, punch=200)),
     # The sharp gears and the jewel. The focus pull in the middle of the earlier window stays out.
     dict(id="memory", footage="landeron", start=12.2, length=6, speed=0.9, grade="machine_warm", x=0.42, y=0.48, drift=-0.03, punch=220),
@@ -450,7 +451,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 9,
+        "version": 10,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,
