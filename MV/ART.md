@@ -2,17 +2,19 @@
 
 A music video about the essence of humanity in machines. The finished film is three minutes. Movement I is the cut on the page now.
 
+## Audience
+
+A general YouTube gaming cyberpunk audience, judging the picture only. They decide in the first seconds: crushed black, cyan in the shadows, magenta in the highlights, a small RGB split on machines. Skin stays warm and registered, with no split, so a person still reads as a person. If a new shot looks like a museum or a lecture under that grade, it does not belong. Do not retouch the score when the picture changes.
+
 ## Picture
 
-One frame: 1280×720, 24 fps. Hard cuts. The same grain and vignette on every shot.
+One frame: 1280×720, 24 fps. Hard cuts. Light grain, a soft vignette.
 
-Two temperatures, and the moments they occupy the same place:
-
-- **Machine** — steel, cyan in the shadows, a little amber in the highlights, color pulled down. Gears, the disk arm, the robot’s hands, the open drive.
-- **Human** — the hands film, warmed so skin reads as heat. It is already black-and-white and shot on a void.
-- **Warm** — a person still inside a machine: the press, the thread, the projector.
-- **Data** — the pianists’ hands as points. A person translated.
-- **Machine, remembered** — the watch again, warmer and slower, after the hands have been there.
+- **Machine** — night city. Cyan shadows, magenta highlights, a 3-pixel RGB split. Gears, the disk arm, the robot’s hands, the open drive.
+- **Human** — the hands film, warm skin, no chromatic split. Heat against the neon.
+- **Warm** — a person still inside a machine: the press, the thread, the projector. Neon in the metal, warmth on the body, a smaller split.
+- **Data** — the pianists’ hands as a HUD. Yellow points on a deep blue grid, a wider split.
+- **Machine, remembered** — the watch again, still neon, with the magenta turned up after the hands have been there.
 
 Screen-blend only the hands film over a machine. The black void drops out, so skin sits inside metal. That blend is the sentence of the film. Do not blend arbitrary shots.
 

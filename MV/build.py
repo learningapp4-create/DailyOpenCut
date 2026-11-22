@@ -31,28 +31,37 @@ BPM = 80
 SR = 44100
 TARGET = 180
 
-# Grades are the art direction. Do not invent a new one for a single shot.
+# Night-city grades. A gaming cyberpunk audience reads cyan shadows and
+# magenta highlights as the machine, and unsplit warm skin as the person.
+# Do not invent a new grade for a single shot, and do not retouch the score.
 GRADES = {
     "machine": (
-        "eq=contrast=1.14:brightness=-0.03:saturation=0.46:gamma=0.94,"
-        "colorbalance=rs=-0.05:gs=0.01:bs=0.11:rh=0.07:gh=0.02:bh=-0.05"
+        "eq=contrast=1.32:brightness=-0.05:saturation=1.22:gamma=0.86,"
+        "colorbalance=rs=-0.14:gs=0.05:bs=0.20:rh=0.18:gh=-0.08:bh=0.14"
     ),
     "human": (
-        "colorchannelmixer=rr=1.15:gg=1.02:bb=0.78,"
-        "eq=contrast=1.08:brightness=0.025:gamma=1.03:saturation=1"
+        "colorchannelmixer=rr=1.22:gg=0.98:bb=0.72,"
+        "eq=contrast=1.16:brightness=0.02:gamma=1.05:saturation=1.05"
     ),
     "warm": (
-        "eq=contrast=1.08:brightness=-0.01:saturation=0.82:gamma=1.01,"
-        "colorbalance=rs=0.05:gs=0.01:bs=-0.05:rh=0.09:gh=0.03:bh=-0.06"
+        "eq=contrast=1.2:brightness=-0.02:saturation=1.08:gamma=0.96,"
+        "colorbalance=rs=0.06:bs=0.08:rh=0.14:gh=-0.02:bh=0.06"
     ),
     "data": (
-        "eq=contrast=1.18:brightness=-0.06:saturation=0.9:gamma=0.9,"
-        "colorbalance=bs=0.08:rh=0.06:gh=0.02:bh=-0.08"
+        "eq=contrast=1.35:brightness=-0.08:saturation=1.45:gamma=0.82,"
+        "colorbalance=bs=0.22:rh=0.08:gh=0.02:bh=-0.06"
     ),
     "machine_warm": (
-        "eq=contrast=1.08:brightness=0.0:saturation=0.66:gamma=1.02,"
-        "colorbalance=rs=0.03:bs=-0.02:rh=0.10:gh=0.04:bh=-0.05"
+        "eq=contrast=1.22:brightness=-0.02:saturation=1.1:gamma=0.92,"
+        "colorbalance=rs=0.02:bs=0.12:rh=0.16:gh=-0.04:bh=0.08"
     ),
+}
+# Small RGB split on the machine world only. Skin stays registered.
+ABERRATION = {
+    "machine": "rgbashift=rh=3:bh=-3",
+    "data": "rgbashift=rh=4:bh=-4",
+    "machine_warm": "rgbashift=rh=2:bh=-2",
+    "warm": "rgbashift=rh=2:bh=-2",
 }
 
 FOOTAGE = [
@@ -248,8 +257,10 @@ def plate_filter(shot: dict, grade: str) -> str:
         f"x='trunc((in_w-out_w)*({bias_x:.4f}+{drift:.4f}*t/{length:.3f})/2)*2':"
         f"y='trunc((in_h-out_h)*{bias_y:.4f}/2)*2'"
     )
-    parts.append("unsharp=5:5:0.35:5:5:0.0")
-    parts.append("vignette=PI/5")
+    parts.append("unsharp=5:5:0.4:5:5:0.0")
+    if grade in ABERRATION:
+        parts.append(ABERRATION[grade])
+    parts.append("vignette=PI/6")
     parts.append(f"trim=duration={length:.3f}")
     parts.append("setpts=PTS-STARTPTS")
     if shot.get("fade_in"):
@@ -257,7 +268,7 @@ def plate_filter(shot: dict, grade: str) -> str:
     if shot.get("fade_out"):
         fade = float(shot["fade_out"])
         parts.append(f"fade=t=out:st={length - fade:.3f}:d={fade:.3f}:color=black")
-    parts.append("noise=alls=6:allf=t")
+    parts.append("noise=alls=4:allf=t")
     parts.append("format=yuv420p")
     parts.append("setsar=1")
     return ",".join(parts)
@@ -432,7 +443,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 1,
+        "version": 2,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,
@@ -470,13 +481,23 @@ def main() -> None:
     print("score")
     write_score(score, duration)
 
-    title = (
-        "drawtext=fontfile=/usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf:"
-        "text='E S S E N C E':fontsize=28:fontcolor=white@0.9:"
-        "x=(w-text_w)/2:y=h*0.80:"
-        "shadowcolor=black@0.55:shadowx=0:shadowy=2:"
-        "alpha='if(lt(t\\,7.2)\\,0\\,if(lt(t\\,8.1)\\,(t-7.2)/0.9\\,if(lt(t\\,11.4)\\,1\\,if(lt(t\\,12.4)\\,(12.4-t)/1.0\\,0))))'"
+    alpha = (
+        "alpha='if(lt(t\\,7.2)\\,0\\,if(lt(t\\,8.1)\\,(t-7.2)/0.9\\,"
+        "if(lt(t\\,11.4)\\,1\\,if(lt(t\\,12.4)\\,(12.4-t)/1.0\\,0))))'"
     )
+    font = "/usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-ExtraBold.ttf"
+
+    def title_layer(color: str, dx: int) -> str:
+        return (
+            f"drawtext=fontfile={font}:text='ESSENCE':fontsize=36:"
+            f"fontcolor={color}:x=(w-text_w)/2{dx:+d}:y=h*0.78:{alpha}"
+        )
+
+    title = ",".join([
+        title_layer("0x5CE1E6@0.9", -4),
+        title_layer("0xFF2BD6@0.8", 4),
+        title_layer("white@0.96", 0),
+    ])
     out = ROOT / "essence.mp4"
     print("master")
     run([
