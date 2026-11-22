@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Daily cuts</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap"
+		/>
+		<style>
+			:root {
+				color-scheme: light;
+				--bg: #fff;
+				--fg: #171717;
+				--muted: #737373;
+				--line: #e5e5e5;
+				--panel: #fafafa;
+			}
+			* { box-sizing: border-box; }
+			html, body { height: 100%; margin: 0; }
+			body {
+				background: var(--bg);
+				color: var(--fg);
+				font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+				font-size: 14px;
+				line-height: 1.5;
+			}
+			h1, h2, .serif { font-family: "Playfair Display", Georgia, serif; font-weight: 500; }
+			a { color: inherit; }
+			button, a { font: inherit; }
+			.sr {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				padding: 0;
+				margin: -1px;
+				overflow: hidden;
+				clip: rect(0, 0, 0, 0);
+				white-space: nowrap;
+				border: 0;
+			}
+			.shell { display: flex; height: 100dvh; overflow: hidden; }
+			.panel {
+				display: flex;
+				flex-direction: column;
+				width: 0;
+				overflow: hidden;
+				background: var(--panel);
+				transition: width 200ms ease;
+			}
+			.panel.open {
+				width: 20rem;
+				border-right: 1px solid var(--line);
+			}
+			.panel-inner {
+				display: flex;
+				flex-direction: column;
+				width: 20rem;
+				max-width: calc(100vw - 3rem);
+				height: 100%;
+			}
+			.panel header, .panel-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+			.panel header {
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-between;
+				gap: 0.75rem;
+				padding-top: 1.25rem;
+			}
+			.eyebrow {
+				margin: 0;
+				font-size: 11px;
+				letter-spacing: 0.16em;
+				text-transform: uppercase;
+				color: var(--muted);
+			}
+			.panel h1 { margin: 0.15rem 0 0; font-size: 1.45rem; line-height: 1.2; text-wrap: balance; }
+			.panel-body {
+				flex: 1;
+				overflow: auto;
+				padding-bottom: 2rem;
+			}
+			.panel section + section {
+				margin-top: 1.5rem;
+				padding-top: 1.5rem;
+				border-top: 1px solid var(--line);
+			}
+			.muted { color: var(--muted); }
+			.stack { display: flex; flex-direction: column; gap: 0.75rem; }
+			.theme { display: flex; flex-direction: column; gap: 0.2rem; margin: 0 0 1rem; }
+			.theme p { margin: 0; }
+			.row { display: flex; justify-content: space-between; gap: 0.75rem; }
+			dt { color: var(--muted); }
+			dd { margin: 0; }
+			.ghost, .about {
+				border: 1px solid transparent;
+				background: transparent;
+				border-radius: 6px;
+				cursor: pointer;
+			}
+			.ghost { padding: 0.2rem 0.45rem; }
+			.ghost:hover, .about:hover { background: #f5f5f5; }
+			.about {
+				border-color: var(--line);
+				background: #fff;
+				padding: 0.3rem 0.55rem;
+			}
+			.stage-wrap { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+			.bar { display: flex; height: 3rem; align-items: center; padding: 0 0.75rem; }
+			.stage { min-height: 0; flex: 1; overflow-y: auto; scroll-snap-type: y mandatory; }
+			.cut {
+				display: flex;
+				height: 100%;
+				scroll-snap-align: start;
+				align-items: center;
+				justify-content: center;
+				padding: 1rem;
+			}
+			video {
+				max-width: 100%;
+				max-height: 100%;
+				background: #0a0a0a;
+				border-radius: 6px;
+			}
+			.empty { color: var(--muted); }
+			.backdrop {
+				display: none;
+				position: fixed;
+				inset: 0;
+				border: 0;
+				background: rgba(0, 0, 0, 0.4);
+				z-index: 1;
+			}
+			@media (max-width: 767px) {
+				.panel.open {
+					position: fixed;
+					inset: 0 auto 0 0;
+					z-index: 2;
+					width: min(20rem, calc(100vw - 3rem));
+					box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+				}
+				.panel.open ~ .backdrop { display: block; }
+				.panel.open ~ .stage-wrap .about { visibility: hidden; }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="shell">
+			<aside id="panel" class="panel" aria-label="About this project" aria-hidden="true" inert>
+				<div class="panel-inner">
+					<header>
+						<div>
+							<p class="eyebrow">Daily cuts</p>
+							<h1>About this project</h1>
+						</div>
+						<button id="close" class="ghost" type="button">Close</button>
+					</header>
+					<div id="panel-body" class="panel-body"></div>
+				</div>
+			</aside>
+			<button id="backdrop" class="backdrop" type="button" aria-label="Close about this project"></button>
+			<div class="stage-wrap">
+				<div class="bar">
+					<button id="about" class="about" type="button" aria-expanded="false" aria-controls="panel">
+						About
+					</button>
+				</div>
+				<p class="sr">Daily cuts</p>
+				<div id="stage" class="stage"></div>
+			</div>
+		</div>
+		<script>
+			const presetFiles = [
+				"presets/themes/minimalistic-homie.jsonc",
+				"presets/themes/playful-gamer.jsonc",
+				"presets/themes/genz-adhd.jsonc",
+				"presets/themes/indie-fashion-cute.jsonc",
+				"presets/themes/opencut-editorial.jsonc",
+				"presets/themes/cinematic-bars.jsonc",
+			]
+
+			const panel = document.getElementById("panel")
+			const about = document.getElementById("about")
+			const stage = document.getElementById("stage")
+			const panelBody = document.getElementById("panel-body")
+
+			function setOpen(open) {
+				panel.classList.toggle("open", open)
+				panel.setAttribute("aria-hidden", open ? "false" : "true")
+				panel.inert = !open
+				about.setAttribute("aria-expanded", open ? "true" : "false")
+				about.textContent = open ? "Hide" : "About"
+			}
+
+			about.addEventListener("click", () => setOpen(!panel.classList.contains("open")))
+			document.getElementById("close").addEventListener("click", () => setOpen(false))
+			document.getElementById("backdrop").addEventListener("click", () => setOpen(false))
+			window.addEventListener("keydown", (event) => {
+				if (event.key === "Escape") setOpen(false)
+			})
+
+			function stripJsonc(input) {
+				let out = ""
+				let inString = false
+				let escape = false
+				for (let index = 0; index < input.length; index += 1) {
+					const char = input[index]
+					const next = input[index + 1]
+					if (inString) {
+						out += char
+						if (escape) escape = false
+						else if (char === "\\") escape = true
+						else if (char === '"') inString = false
+						continue
+					}
+					if (char === '"') {
+						inString = true
+						out += char
+						continue
+					}
+					if (char === "/" && next === "/") {
+						index += 1
+						while (index + 1 < input.length && input[index + 1] !== "\n") index += 1
+						continue
+					}
+					if (char === "/" && next === "*") {
+						index += 2
+						while (index < input.length && !(input[index] === "*" && input[index + 1] === "/")) index += 1
+						index += 1
+						continue
+					}
+					out += char
+				}
+				return out
+			}
+
+			function el(tag, className, text) {
+				const node = document.createElement(tag)
+				if (className) node.className = className
+				if (text) node.textContent = text
+				return node
+			}
+
+			function link(href, text) {
+				const node = el("a", null, text)
+				node.href = href
+				node.target = "_blank"
+				node.rel = "noopener noreferrer"
+				return node
+			}
+
+			let activeId = ""
+
+			function renderPanel(index, presets, cuts) {
+				panelBody.replaceChildren()
+				const aboutSection = el("section", "stack")
+				aboutSection.append(
+					el(
+						"p",
+						null,
+						index.about +
+							" The page is the videos. This panel is how you read a cut: theme, footage, license, and preset.",
+					),
+					el(
+						"p",
+						"muted",
+						"Themes are JSONC in the repository. Each file sets style, pace, colour, typography, transitions, and compositing: timing, grade, type, and motion. A pipeline or the editor loads that file. The same list is daily/README.md. The code is MIT. The picture stays under the footage license.",
+					),
+				)
+				const readme = aboutSection.querySelector("p.muted")
+				readme.replaceChildren()
+				readme.append(
+					"Themes are JSONC in the repository. Each file sets style, pace, colour, typography, transitions, and compositing: timing, grade, type, and motion. A pipeline or the editor loads that file. The same list is ",
+					link("daily/README.md", "daily/README.md"),
+					". The code is MIT. The picture stays under the footage license.",
+				)
+				panelBody.append(aboutSection)
+
+				const cut = cuts.find((item) => item.id === activeId) || cuts[0]
+				if (cut) {
+					const section = el("section", "stack")
+					section.append(el("h2", "serif", "This cut"))
+					const title = el("p", "serif", cut.theme)
+					title.style.fontSize = "1.35rem"
+					title.style.margin = "0"
+					const meta = el("p", "muted", cut.date + " · " + cut.presetId + "@" + cut.presetVersion)
+					meta.style.margin = "0"
+					section.append(title, meta, el("p", null, cut.shows))
+					const footage = el("div")
+					footage.append(el("dt", null, "Footage"))
+					const footageValue = el("dd")
+					footageValue.append(
+						link(cut.footage.sourceUrl, cut.footage.title),
+						", " + cut.footage.creator,
+					)
+					footage.append(footageValue)
+					const license = el("div")
+					license.append(el("dt", null, "License"))
+					const licenseValue = el("dd")
+					licenseValue.append(link(cut.footage.licenseUrl, cut.footage.license))
+					license.append(licenseValue)
+					section.append(footage, license)
+					const presetHref =
+						"https://github.com/learningapp4-create/DailyOpenCut/blob/main/" + cut.paths.preset
+					section.append(link(presetHref, "Open this preset"))
+					panelBody.append(section)
+				}
+
+				const themes = el("section")
+				themes.append(el("h2", "serif", "Themes"))
+				for (const preset of presets) {
+					const item = el("div", "theme")
+					const row = el("p", "row")
+					row.append(el("span", null, preset.name), el("span", "muted", preset.category))
+					item.append(row, el("p", "muted", preset.summary))
+					item.append(
+						link(
+							"https://github.com/learningapp4-create/DailyOpenCut/blob/main/presets/themes/" +
+								preset.id +
+								".jsonc",
+							preset.id + "@" + preset.version,
+						),
+					)
+					themes.append(item)
+				}
+				panelBody.append(themes)
+			}
+
+			function renderCuts(cuts) {
+				stage.replaceChildren()
+				if (cuts.length === 0) {
+					stage.append(el("p", "empty cut", "No cut yet."))
+					return
+				}
+				for (const cut of cuts) {
+					const section = el("section", "cut")
+					section.dataset.cutId = cut.id
+					const heading = el("h2", "sr", cut.theme + ", " + cut.date)
+					section.append(heading)
+					const preview = cut.paths && cut.paths.preview
+					if (!preview) {
+						section.append(el("p", "empty", "Preview missing for " + cut.theme + "."))
+						stage.append(section)
+						continue
+					}
+					const video = document.createElement("video")
+					video.controls = true
+					video.playsInline = true
+					video.preload = "metadata"
+					video.poster = preview.replace(/preview\.mp4$/, "poster.jpg")
+					video.src = preview
+					const track = document.createElement("track")
+					track.default = true
+					track.kind = "captions"
+					track.srclang = "en"
+					track.label = "English"
+					track.src = preview.replace(/preview\.mp4$/, "captions.vtt")
+					video.append(track)
+					section.append(video)
+					stage.append(section)
+				}
+			}
+
+			async function loadJsonc(path) {
+				const response = await fetch(path)
+				if (!response.ok) throw new Error(path)
+				return JSON.parse(stripJsonc(await response.text()))
+			}
+
+			async function main() {
+				try {
+					const index = await loadJsonc("daily/index.json")
+					const cuts = Array.isArray(index.cuts) ? index.cuts : []
+					activeId = cuts[0] ? cuts[0].id : ""
+					renderCuts(cuts)
+					const presets = []
+					await Promise.all(
+						presetFiles.map(async (path) => {
+							try {
+								presets.push(await loadJsonc(path))
+							} catch (error) {
+								console.error(error)
+							}
+						}),
+					)
+					presets.sort(
+						(a, b) => presetFiles.indexOf("presets/themes/" + a.id + ".jsonc") -
+							presetFiles.indexOf("presets/themes/" + b.id + ".jsonc"),
+					)
+					const draw = () => renderPanel(index, presets, cuts)
+					draw()
+					const nodes = stage.querySelectorAll("[data-cut-id]")
+					if (nodes.length > 0) {
+						const observer = new IntersectionObserver(
+							(entries) => {
+								const visible = entries
+									.filter((entry) => entry.isIntersecting)
+									.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+								const id = visible && visible.target.getAttribute("data-cut-id")
+								if (id && id !== activeId) {
+									activeId = id
+									draw()
+								}
+							},
+							{ threshold: [0.6, 0.9] },
+						)
+						for (const node of nodes) observer.observe(node)
+					}
+				} catch (error) {
+					console.error(error)
+					stage.append(el("p", "empty cut", "The daily cut could not be loaded."))
+				}
+			}
+
+			main()
+		</script>
+	</body>
+</html>

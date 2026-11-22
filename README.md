@@ -21,7 +21,7 @@ You can still find the previous version at [opencut-app/opencut-classic](https:/
 
 ## Daily cuts
 
-Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). The web app home page plays those cuts. A collapsible panel on the left holds the same index. Preset files are in [`presets/`](presets/README.md).
+Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). [The GitHub Pages site](https://learningapp4-create.github.io/DailyOpenCut/) plays those cuts. A collapsible panel on the left holds the same index. Preset files are in [`presets/`](presets/README.md). The local web app (`moon run web:dev`) plays the same page.
 
 ## Development
 
