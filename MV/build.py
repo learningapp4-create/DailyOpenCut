@@ -182,7 +182,8 @@ FOOTAGE = [
 # screen blend lets skin float inside the machine.
 SHOTS = [
     dict(id="open", footage="landeron", start=38.0, length=6, grade="machine", x=0.50, y=0.46, drift=0.06, punch=360, fade_in=0.8),
-    dict(id="finger", footage="actuator", start=1.0, length=6, grade="machine", x=0.48, y=0.42, drift=-0.06, punch=420),
+    # The pivot and the arm. The desk stays out. A pale edge remains at the left, because the arm crosses it.
+    dict(id="finger", footage="actuator", start=1.0, length=6, grade="machine", x=0.80, y=0.14, punch=1200),
     # The mill is a sunlit barn under this grade. The watch returns on another wheel.
     dict(id="jewel", footage="landeron", start=20.0, length=6, grade="machine", x=0.62, y=0.38, drift=0.04, punch=480),
     # Both arms and the gripper. The face screen drops out. A wall strip stays at the right, because a tighter crop loses the arm while it moves.
@@ -449,7 +450,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 8,
+        "version": 9,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,
