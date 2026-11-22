@@ -18,7 +18,7 @@ One frame: 1280×720, 24 fps. Hard cuts. Light grain, a soft vignette.
 
 Screen-blend only the hands film over a machine. The black void drops out, so skin sits inside metal. That blend is the sentence of the film. Do not blend arbitrary shots.
 
-The Preston mill stays out of Movement I. Under this grade it is a sunlit barn. The watch comes back on a different wheel instead. The print shop stays on the red rollers, not the white wall or the man's face. The last shot is the cupped hands, not the bowl. The robot stays on the two arms and the gripper. The face screen stays out of that frame. A strip of wall remains at the right edge, because a tighter crop loses the arm while it moves.
+The Preston mill stays out of Movement I. Under this grade it is a sunlit barn. The watch comes back on a different wheel instead. The print shop stays on the red rollers, not the white wall or the man's face. The second print shot is the later pass, on the rollers. The camera slips toward the wall at the end of that bar. The face stays out. The last shot is the cupped hands, not the bowl. The robot stays on the two arms and the gripper. The face screen stays out of that frame. A strip of wall remains at the right edge, because a tighter crop loses the arm while it moves.
 
 The word ESSENCE appears once, early, and leaves. No other type on the picture.
 
@@ -46,7 +46,7 @@ Use these before going hunting, and keep the licenses in `cut.js`:
 - EGU CNC milling aluminum — CC BY-SA 3.0. Heavy file. Take a few seconds of metal, not the whole reel.
 - Intaglio printing — CC BY-SA 4.0. Hands, ink, plate.
 
-Leave out anything with a burned-in watermark, a speed badge, a talking-head explainer, or a song we did not write. The window robot, the Baxter arms, and the mill are already in. A return has to be a reprise, not a repeat.
+Leave out anything with a burned-in watermark, a speed badge, a talking-head explainer, or a song we did not write. The window robot and the Baxter arms are already in. The mill is not. A return has to be a reprise, not a repeat.
 
 ## Build
 
