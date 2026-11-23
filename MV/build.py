@@ -196,7 +196,8 @@ SHOTS = [
     dict(id="press", footage="press", start=0.3, length=3, grade="warm", x=0.46, y=0.42, punch=480),
     # Later pass on the rollers. The camera slips toward the wall in the last half second. The face stays out.
     dict(id="printer", footage="press", start=14.5, length=3, grade="warm", x=0.32, y=0.48, punch=1200),
-    dict(id="thread", footage="sew", start=0.8, length=3, grade="warm", x=0.55, y=0.62, punch=1100),
+    # The needle and the roller. The window and the man stay out.
+    dict(id="thread", footage="sew", start=19.0, length=3, grade="warm", x=0.64, y=0.58, punch=900),
     # A hand gripping a wrist, sharp for the whole bar. The smear of three hands stays out.
     dict(id="through", footage="landeron", start=55.0, length=6, grade="machine", x=0.52, y=0.44, drift=0.05, punch=400,
          over=dict(footage="hands", start=84.0, grade="human", x=0.50, y=0.42, punch=160)),
@@ -455,7 +456,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 16,
+        "version": 17,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,
