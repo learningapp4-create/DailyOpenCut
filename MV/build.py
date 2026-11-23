@@ -191,12 +191,10 @@ SHOTS = [
     dict(id="arms", footage="baxter", start=12.0, length=6, speed=1.25, grade="machine", x=0.34, y=0.30, punch=1300, precrop="iw*0.78:ih:iw*0.11:0"),
     # One sharp hand, then a second hand arrives. The ghost finger and the floating blur stay out.
     dict(id="reach", footage="hands", start=48.0, length=6, grade="human", x=0.48, y=0.46, punch=180),
-    # One hand on the grid. The second figure and the key row stay out. One point stays on the floor.
-    dict(id="data", footage="piano", start=2.0, length=6, grade="data", x=0.98, y=0.44, punch=900),
+    # One hand on the grid for the whole nine seconds. The second figure and the key row stay out. One point stays on the floor.
+    dict(id="data", footage="piano", start=2.0, length=9, grade="data", x=0.98, y=0.44, punch=900),
     # Hands on the film reel. The face stays out.
     dict(id="press", footage="projector", start=54.0, length=3, grade="warm", x=0.22, y=0.58, punch=520),
-    # Later pass on the rollers. The camera slips toward the wall in the last half second. The face stays out.
-    dict(id="printer", footage="press", start=14.5, length=3, grade="warm", x=0.32, y=0.48, punch=1200),
     # The needle and the roller. The window and the man stay out.
     dict(id="thread", footage="sew", start=19.0, length=3, grade="warm", x=0.64, y=0.58, punch=900),
     # A hand gripping a wrist, sharp for the whole bar. The smear of three hands stays out.
@@ -457,7 +455,7 @@ def write_cut_js(duration: float, used: list[dict]) -> None:
         "targetSeconds": TARGET,
         "movement": "I",
         "movementTitle": "the machine remembers a hand",
-        "version": 19,
+        "version": 20,
         "rendered": "2026-11-22",
         "filmLicense": "CC BY-SA 4.0",
         "credits": credits,

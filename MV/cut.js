@@ -7,7 +7,7 @@ window.CUT = {
   "targetSeconds": 180,
   "movement": "I",
   "movementTitle": "the machine remembers a hand",
-  "version": 19,
+  "version": 20,
   "rendered": "2026-11-22",
   "filmLicense": "CC BY-SA 4.0",
   "credits": [
@@ -46,12 +46,6 @@ window.CUT = {
       "author": "Werner Goebl and Caroline Palmer",
       "license": "CC BY 2.5",
       "url": "https://commons.wikimedia.org/wiki/File:Temporal-Control-and-Hand-Movement-Efficiency-in-Skilled-Music-Performance-pone.0050901.s001.ogv"
-    },
-    {
-      "title": "Letterpress printing in Cuttack",
-      "author": "Subhashish Panigrahi",
-      "license": "CC BY-SA 4.0",
-      "url": "https://commons.wikimedia.org/wiki/File:Printing_in_a_letterpress.webm"
     },
     {
       "title": "Singer sewing machine at G\u00f6teborgs Remfabrik",
