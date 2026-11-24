@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-24-pale-rose",
+  "date": "2026-11-24",
+  "title": "Pale rose",
+  "presetId": "indie-fashion-cute",
+  "inSeconds": 8,
+  "durationSeconds": 10,
+  "lines": ["pale rose", "held close"],
+  "footage": {
+    "mediaId": "commons-yellow-rose-macro-one",
+    "title": "Yellow Rose through a Macro Lens, One",
+    "creator": "Joaquim Baeta",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_Rose_through_a_Macro_Lens,_One.webm",
+    "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Yellow_Rose_through_a_Macro_Lens%2C_One.webm",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  }
+}

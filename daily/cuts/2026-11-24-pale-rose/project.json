@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "id": "2026-11-24-pale-rose",
+    "name": "Pale rose",
+    "duration": {
+      "ticks": 1200000
+    },
+    "createdAt": "2026-11-24T00:00:00.000Z",
+    "updatedAt": "2026-11-24T00:00:00.000Z"
+  },
+  "settings": {
+    "fps": {
+      "numerator": 24,
+      "denominator": 1
+    },
+    "canvasSize": {
+      "width": 1080,
+      "height": 1350
+    },
+    "canvasSizeMode": "custom",
+    "background": {
+      "type": "color",
+      "color": "#fff4ee"
+    }
+  },
+  "currentSceneId": "scene-main",
+  "version": 1,
+  "scenes": [
+    {
+      "id": "scene-main",
+      "name": "Main scene",
+      "isMain": true,
+      "bookmarks": [],
+      "createdAt": "2026-11-24T00:00:00.000Z",
+      "updatedAt": "2026-11-24T00:00:00.000Z",
+      "tracks": {
+        "overlay": [
+          {
+            "id": "track-type",
+            "name": "Text track",
+            "type": "text",
+            "hidden": false,
+            "elements": [
+              {
+                "id": "el-title",
+                "type": "text",
+                "name": "Title",
+                "duration": {
+                  "ticks": 1200000
+                },
+                "startTime": {
+                  "ticks": 0
+                },
+                "trimStart": {
+                  "ticks": 0
+                },
+                "trimEnd": {
+                  "ticks": 0
+                },
+                "params": {
+                  "content": "pale rose\nheld close",
+                  "fontSize": 6,
+                  "fontFamily": "Playfair Display",
+                  "color": "#3c2a33",
+                  "textAlign": "center",
+                  "fontWeight": "normal",
+                  "fontStyle": "italic",
+                  "textDecoration": "none",
+                  "letterSpacing": 0.8,
+                  "lineHeight": 1.1,
+                  "background.enabled": false,
+                  "background.color": "#fff4ee",
+                  "background.cornerRadius": 0,
+                  "background.paddingX": 16,
+                  "background.paddingY": 10,
+                  "background.offsetX": 0,
+                  "background.offsetY": 0,
+                  "transform.positionX": 0,
+                  "transform.positionY": -513,
+                  "transform.scaleX": 1,
+                  "transform.scaleY": 1,
+                  "transform.rotate": 0,
+                  "opacity": 1,
+                  "blendMode": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "main": {
+          "id": "track-main",
+          "name": "Main",
+          "type": "video",
+          "muted": false,
+          "hidden": false,
+          "elements": [
+            {
+              "id": "el-picture",
+              "type": "video",
+              "mediaId": "commons-yellow-rose-macro-one",
+              "name": "Yellow Rose through a Macro Lens, One",
+              "duration": {
+                "ticks": 1200000
+              },
+              "startTime": {
+                "ticks": 0
+              },
+              "trimStart": {
+                "ticks": 960000
+              },
+              "trimEnd": {
+                "ticks": 3269760
+              },
+              "sourceDuration": {
+                "ticks": 5429760
+              },
+              "isSourceAudioEnabled": true,
+              "retime": {
+                "rate": 1,
+                "maintainPitch": true
+              },
+              "effects": [
+                {
+                  "id": "fx-grade",
+                  "type": "grade",
+                  "enabled": true,
+                  "params": {
+                    "contrast": 1.02,
+                    "saturation": 0.96,
+                    "brightness": 0.01,
+                    "temperature": 3,
+                    "gamma": 1.02,
+                    "blurIntensity": 0
+                  }
+                }
+              ],
+              "masks": [],
+              "animations": {
+                "opacity": {
+                  "keys": [
+                    {
+                      "id": "opacity-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-in",
+                      "time": {
+                        "ticks": 42000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-hold",
+                      "time": {
+                        "ticks": 1146000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-out",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleX": {
+                  "keys": [
+                    {
+                      "id": "scale-x-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-x-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.04,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleY": {
+                  "keys": [
+                    {
+                      "id": "scale-y-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-y-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.04,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                }
+              },
+              "params": {
+                "transform.positionX": 0,
+                "transform.positionY": -8,
+                "transform.scaleX": 1,
+                "transform.scaleY": 1,
+                "transform.rotate": 0,
+                "opacity": 1,
+                "blendMode": "normal",
+                "volume": 0.4
+              }
+            }
+          ]
+        },
+        "audio": []
+      }
+    }
+  ],
+  "daily": {
+    "format": "daily-opencut-cut",
+    "presetId": "indie-fashion-cute",
+    "presetVersion": "1.1.0",
+    "presetPath": "presets/themes/indie-fashion-cute.jsonc",
+    "fit": "cover",
+    "cropSourceLetterbox": true,
+    "footage": {
+      "mediaId": "commons-yellow-rose-macro-one",
+      "title": "Yellow Rose through a Macro Lens, One",
+      "creator": "Joaquim Baeta",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_Rose_through_a_Macro_Lens,_One.webm",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Yellow_Rose_through_a_Macro_Lens%2C_One.webm",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "inSeconds": 8,
+    "durationSeconds": 10,
+    "sourceDurationSeconds": 45.248,
+    "sourceLetterbox": null,
+    "lines": [
+      "pale rose",
+      "held close"
+    ],
+    "preview": "daily/cuts/2026-11-24-pale-rose/preview.mp4",
+    "fontStandIn": "Liberation Serif stands in for Playfair Display in this preview.",
+    "render": "node presets/render-preview.mjs daily/cuts/2026-11-24-pale-rose"
+  }
+}

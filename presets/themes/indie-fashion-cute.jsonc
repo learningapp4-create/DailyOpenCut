@@ -5,7 +5,7 @@
   // Stable id a pipeline passes to the editor. Do not rename it.
   "id": "indie-fashion-cute",
   // Semver of this knob set. A daily cut records the version it was made with.
-  "version": "1.0.0",
+  "version": "1.1.0",
   // Browse group on the daily index.
   "category": "fashion",
   // Human name shown on the index and in the editor.
@@ -80,7 +80,7 @@
     // textAlign.
     "align": "center",
     // Design size. Pixels = fontSize * canvasHeight / 90. Editor range is 5 to 300.
-    "fontSize": 5.5,
+    "fontSize": 6,
     // letterSpacing. 0 is the editor default.
     "letterSpacing": 0.8,
     // lineHeight multiplier. The editor default is 1.2.
@@ -108,7 +108,7 @@
       // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
       "kind": "dissolve",
       // Length of this transition. 0 is a hard cut.
-      "seconds": 0.55,
+      "seconds": 0.35,
       // Editor graph-editor easing.
       "easing": {
         // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
@@ -122,7 +122,7 @@
       // dissolve, cut, slide-left, or dip-white. The pipeline turns this into opacity and position keyframes.
       "kind": "dissolve",
       // Length of this transition. 0 is a hard cut.
-      "seconds": 0.7,
+      "seconds": 0.45,
       // Editor graph-editor easing.
       "easing": {
         // Builtin id: smooth, ease-out, ease-in, ease-in-out, pop, or linear.
@@ -161,17 +161,17 @@
   // Image treatment on the picture, separate from the palette.
   "grade": {
     // 1 leaves contrast alone. Above 1 adds punch.
-    "contrast": 0.92,
+    "contrast": 1.02,
     // 1 is the original color. 0 is grey.
-    "saturation": 0.85,
+    "saturation": 0.96,
     // Added brightness. 0 is unchanged. Negative crushes.
-    "brightness": 0.05,
+    "brightness": 0.01,
     // Warmth. 0 is neutral. Positive is warmer.
-    "temperature": 8,
+    "temperature": 3,
     // Midtone gamma. 1 is unchanged. Above 1 lifts mids.
-    "gamma": 1.08,
+    "gamma": 1.02,
     // Blur effect intensity, 0 to 100. 0 stays sharp.
-    "blurIntensity": 2
+    "blurIntensity": 0
   },
   // On-screen words and where they sit.
   "type": {
@@ -181,7 +181,7 @@
       "sunday"
     ],
     // Title offset from center as a fraction of height. Positive is down.
-    "positionYFraction": -0.36,
+    "positionYFraction": -0.38,
     // Inset from the side for left or right type, as a fraction of width.
     "safeMarginFraction": 0.08,
     // When true, add a second text element with creditText.
@@ -210,7 +210,7 @@
   // How the picture meets the frame: fit, bars, blend, volume.
   "compositing": {
     // contain keeps the whole gesture. cover fills the frame and crops.
-    "fit": "contain",
+    "fit": "cover",
     // Drop baked-in black bars before fitting.
     "cropSourceLetterbox": true,
     // Frame mask, or null when the picture is unmasked.
@@ -226,6 +226,11 @@
       "version": "1.0.0",
       // What changed in the knobs, and why.
       "note": "Initial knob set. 4:5 custom canvas, lifted pastel grade, and a light blur the editor already ships."
+    },
+    {
+      "version": "1.1.0",
+      // What changed in the knobs, and why.
+      "note": "The 10s conform of the yellow-rose macro showed the problems. Contain on a 16:9 picture left the bloom as a strip: the lower third of the 4:5 frame was empty blush, and the petals never filled the fashion frame. Blur 2 sat on a shot that was already soft and melted the inner petals. Contrast 0.92, saturation 0.85, brightness 0.05, temperature 8, and gamma 1.08 washed the yellow toward cream. Dissolves of 0.55s and 0.7s hid the open and the end of a hold that barely moves. 1.1.0 covers the frame, turns the blur off, holds the grade at contrast 1.02, saturation 0.96, brightness 0.01, temperature 3, and gamma 1.02, shortens the dissolves to 0.35s in and 0.45s out, and lifts the italic title to -0.38 at fontSize 6 so both lines sit in the soft upper petals, clear of the sharp center. The 24 fps hold and the 4 percent push stay."
     }
   ]
 }

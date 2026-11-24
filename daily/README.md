@@ -8,6 +8,7 @@ Each row is one cut: the theme, the date, what it shows, the footage and its lic
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-21 | Minimalistic homie | [minimalistic-homie@1.1.0](../presets/themes/minimalistic-homie.jsonc) | A hand lifts a French press and pours coffee into a red mug on a kitchen counter. | [Use of a coffee press](https://commons.wikimedia.org/wiki/File:Use_of_a_coffee_press.ogv) by Daniel Case, videography by his son | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
 | 2026-11-21 | Cinematic bars | [cinematic-bars@1.1.0](../presets/themes/cinematic-bars.jsonc) | A drone drifts over morning fog above the village of Vetla, with houses and fields showing through the trees. | [Drone video of foggy Vetla village in Estonia](https://commons.wikimedia.org/wiki/File:Drone_video_of_foggy_Vetla_village_in_Estonia.ogv) by Sillerkiil | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| 2026-11-24 | Indie fashion cute | [indie-fashion-cute@1.1.0](../presets/themes/indie-fashion-cute.jsonc) | A macro lens rests on a yellow rose, and the bloom fills the frame. | [Yellow Rose through a Macro Lens, One](https://commons.wikimedia.org/wiki/File:Yellow_Rose_through_a_Macro_Lens,_One.webm) by Joaquim Baeta | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
 
 ## 2026-11-21 — Quiet press
 
@@ -47,4 +48,23 @@ node presets/render-preview.mjs daily/cuts/2026-11-21-fog-hold
 
 The preview draws Liberation Serif where the editor would draw Playfair Display. The project still names Playfair Display.
 
-Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. This cut's picture is CC0 1.0.
+## 2026-11-24 — Pale rose
+
+A macro lens rests on a yellow rose, and the bloom fills the frame.
+
+The picture is 10 seconds starting at 8s, played at 1x and 24 fps. Preset `indie-fashion-cute` at version `1.1.0`. The first pass left the bloom as a strip in an empty blush frame and washed the yellow. The notes for that change are in the preset changelog. The source audio is a quiet room, kept low.
+
+- Preview: [preview.mp4](cuts/2026-11-24-pale-rose/preview.mp4) (derivative, CC BY 4.0)
+- Project: [project.json](cuts/2026-11-24-pale-rose/project.json)
+- Source file: <https://upload.wikimedia.org/wikipedia/commons/4/4e/Yellow_Rose_through_a_Macro_Lens%2C_One.webm>
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0)
+
+Re-render from the preset:
+
+```sh
+node presets/render-preview.mjs daily/cuts/2026-11-24-pale-rose
+```
+
+The preview draws Liberation Serif where the editor would draw Playfair Display. The project still names Playfair Display.
+
+Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0.

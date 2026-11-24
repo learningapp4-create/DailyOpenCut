@@ -333,6 +333,12 @@
 					how:
 						"OpenCut loaded preset cinematic-bars 1.1.0. A cinematic-bars mask opens 0.74 of the frame. The title sits at 0.28 of the height so the second line stays above the lower bar. The grade stays open (contrast 1.06, saturation 0.88) after an earlier pass crushed the fog. Dissolves are 0.45s in and 0.5s out. The source has no audio, so the preview is silent. The timeline is daily/cuts/2026-11-21-fog-hold/project.json.",
 				},
+				"2026-11-24-pale-rose": {
+					prompt:
+						"Use the yellow-rose macro. Hold 10 seconds from 8 seconds, at normal speed. Cut it in the Indie fashion cute style: a 4:5 frame, blush paper, italic serif, lowercase. Two lines: pale rose / held close. Let the bloom fill the frame, and keep the yellow open.",
+					how:
+						"OpenCut loaded preset indie-fashion-cute 1.1.0. The canvas is 1080×1350. The picture covers the frame, so the 16:9 macro is not a strip between empty margins. The grade stays light (contrast 1.02, saturation 0.96, temperature +3) and the extra blur is off, so the inner petals keep an edge. The italic title sits high in the soft petals, clear of the sharp center. Dissolves are 0.35s in and 0.45s out. The timeline is daily/cuts/2026-11-24-pale-rose/project.json.",
+				},
 			}
 
 			const state = {
@@ -458,6 +464,12 @@
 							theme: "Cinematic bars",
 							shows: "A drone drifts over morning fog above the village of Vetla.",
 							paths: { preview: "daily/cuts/2026-11-21-fog-hold/preview.mp4" },
+						},
+						{
+							id: "2026-11-24-pale-rose",
+							theme: "Indie fashion cute",
+							shows: "A macro lens rests on a yellow rose, and the bloom fills the frame.",
+							paths: { preview: "daily/cuts/2026-11-24-pale-rose/preview.mp4" },
 						},
 					]
 				}

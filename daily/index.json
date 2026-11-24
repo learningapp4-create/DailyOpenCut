@@ -43,6 +43,27 @@
         "preview": "daily/cuts/2026-11-21-fog-hold/preview.mp4",
         "preset": "presets/themes/cinematic-bars.jsonc"
       }
+    },
+    {
+      "id": "2026-11-24-pale-rose",
+      "date": "2026-11-24",
+      "theme": "Indie fashion cute",
+      "presetId": "indie-fashion-cute",
+      "presetVersion": "1.1.0",
+      "shows": "A macro lens rests on a yellow rose, and the bloom fills the frame.",
+      "footage": {
+        "title": "Yellow Rose through a Macro Lens, One",
+        "creator": "Joaquim Baeta",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_Rose_through_a_Macro_Lens,_One.webm",
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Yellow_Rose_through_a_Macro_Lens%2C_One.webm",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      "paths": {
+        "project": "daily/cuts/2026-11-24-pale-rose/project.json",
+        "preview": "daily/cuts/2026-11-24-pale-rose/preview.mp4",
+        "preset": "presets/themes/indie-fashion-cute.jsonc"
+      }
     }
   ]
 }
