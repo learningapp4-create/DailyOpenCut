@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "id": "2026-11-25-multi-ball",
+    "name": "Multi ball",
+    "duration": {
+      "ticks": 1200000
+    },
+    "createdAt": "2026-11-25T00:00:00.000Z",
+    "updatedAt": "2026-11-25T00:00:00.000Z"
+  },
+  "settings": {
+    "fps": {
+      "numerator": 60,
+      "denominator": 1
+    },
+    "canvasSize": {
+      "width": 1080,
+      "height": 1920
+    },
+    "canvasSizeMode": "preset",
+    "background": {
+      "type": "color",
+      "color": "#10120f"
+    }
+  },
+  "currentSceneId": "scene-main",
+  "version": 1,
+  "scenes": [
+    {
+      "id": "scene-main",
+      "name": "Main scene",
+      "isMain": true,
+      "bookmarks": [],
+      "createdAt": "2026-11-25T00:00:00.000Z",
+      "updatedAt": "2026-11-25T00:00:00.000Z",
+      "tracks": {
+        "overlay": [
+          {
+            "id": "track-type",
+            "name": "Text track",
+            "type": "text",
+            "hidden": false,
+            "elements": [
+              {
+                "id": "el-title",
+                "type": "text",
+                "name": "Title",
+                "duration": {
+                  "ticks": 1200000
+                },
+                "startTime": {
+                  "ticks": 0
+                },
+                "trimStart": {
+                  "ticks": 0
+                },
+                "trimEnd": {
+                  "ticks": 0
+                },
+                "params": {
+                  "content": "MULTI BALL\nSTILL LIVE",
+                  "fontSize": 5,
+                  "fontFamily": "Inter",
+                  "color": "#10120f",
+                  "textAlign": "center",
+                  "fontWeight": "bold",
+                  "fontStyle": "normal",
+                  "textDecoration": "none",
+                  "letterSpacing": 1.2,
+                  "lineHeight": 0.95,
+                  "background.enabled": true,
+                  "background.color": "#c6ff3a",
+                  "background.cornerRadius": 2,
+                  "background.paddingX": 18,
+                  "background.paddingY": 8,
+                  "background.offsetX": 0,
+                  "background.offsetY": 0,
+                  "transform.positionX": 0,
+                  "transform.positionY": -730,
+                  "transform.scaleX": 1,
+                  "transform.scaleY": 1,
+                  "transform.rotate": 0,
+                  "opacity": 1,
+                  "blendMode": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "main": {
+          "id": "track-main",
+          "name": "Main",
+          "type": "video",
+          "muted": false,
+          "hidden": false,
+          "elements": [
+            {
+              "id": "el-picture",
+              "type": "video",
+              "mediaId": "commons-pinball-multi-ball",
+              "name": "Pinball-multi-ball",
+              "duration": {
+                "ticks": 1200000
+              },
+              "startTime": {
+                "ticks": 0
+              },
+              "trimStart": {
+                "ticks": 5520000
+              },
+              "trimEnd": {
+                "ticks": 2827314
+              },
+              "sourceDuration": {
+                "ticks": 9607314
+              },
+              "isSourceAudioEnabled": true,
+              "retime": {
+                "rate": 1.05,
+                "maintainPitch": true
+              },
+              "effects": [
+                {
+                  "id": "fx-grade",
+                  "type": "grade",
+                  "enabled": true,
+                  "params": {
+                    "contrast": 1.08,
+                    "saturation": 1.08,
+                    "brightness": 0,
+                    "temperature": -1,
+                    "gamma": 1.02,
+                    "blurIntensity": 0
+                  }
+                }
+              ],
+              "masks": [],
+              "animations": {
+                "opacity": {
+                  "keys": [
+                    {
+                      "id": "opacity-in",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-hold",
+                      "time": {
+                        "ticks": 1185600
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-out",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleX": {
+                  "keys": [
+                    {
+                      "id": "scale-x-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-x-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.03,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleY": {
+                  "keys": [
+                    {
+                      "id": "scale-y-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-y-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.03,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                }
+              },
+              "params": {
+                "transform.positionX": 0,
+                "transform.positionY": 0,
+                "transform.scaleX": 1,
+                "transform.scaleY": 1,
+                "transform.rotate": 0,
+                "opacity": 1,
+                "blendMode": "normal",
+                "volume": 0.85
+              }
+            }
+          ]
+        },
+        "audio": []
+      }
+    }
+  ],
+  "daily": {
+    "format": "daily-opencut-cut",
+    "presetId": "playful-gamer",
+    "presetVersion": "1.1.0",
+    "presetPath": "presets/themes/playful-gamer.jsonc",
+    "fit": "cover",
+    "cropSourceLetterbox": true,
+    "footage": {
+      "mediaId": "commons-pinball-multi-ball",
+      "title": "Pinball-multi-ball",
+      "creator": "Myriam Thyes",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pinball-multi-ball.webm",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Pinball-multi-ball.webm",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "inSeconds": 46,
+    "durationSeconds": 10,
+    "sourceDurationSeconds": 80.060953,
+    "sourceLetterbox": null,
+    "lines": [
+      "MULTI BALL",
+      "STILL LIVE"
+    ],
+    "preview": "daily/cuts/2026-11-25-multi-ball/preview.mp4",
+    "fontStandIn": "Liberation Serif stands in for Playfair Display in this preview.",
+    "render": "node presets/render-preview.mjs daily/cuts/2026-11-25-multi-ball"
+  }
+}

@@ -9,6 +9,7 @@ Each row is one cut: the theme, the date, what it shows, the footage and its lic
 | 2026-11-21 | Minimalistic homie | [minimalistic-homie@1.1.0](../presets/themes/minimalistic-homie.jsonc) | A hand lifts a French press and pours coffee into a red mug on a kitchen counter. | [Use of a coffee press](https://commons.wikimedia.org/wiki/File:Use_of_a_coffee_press.ogv) by Daniel Case, videography by his son | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) |
 | 2026-11-21 | Cinematic bars | [cinematic-bars@1.1.0](../presets/themes/cinematic-bars.jsonc) | A drone drifts over morning fog above the village of Vetla, with houses and fields showing through the trees. | [Drone video of foggy Vetla village in Estonia](https://commons.wikimedia.org/wiki/File:Drone_video_of_foggy_Vetla_village_in_Estonia.ogv) by Sillerkiil | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | 2026-11-24 | Indie fashion cute | [indie-fashion-cute@1.1.0](../presets/themes/indie-fashion-cute.jsonc) | A macro lens rests on a yellow rose, and the bloom fills the frame. | [Yellow Rose through a Macro Lens, One](https://commons.wikimedia.org/wiki/File:Yellow_Rose_through_a_Macro_Lens,_One.webm) by Joaquim Baeta | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+| 2026-11-25 | Playful gamer | [playful-gamer@1.1.0](../presets/themes/playful-gamer.jsonc) | Balls run a Wildwasser pinball playfield while the inserts stay lit. | [Pinball-multi-ball](https://commons.wikimedia.org/wiki/File:Pinball-multi-ball.webm) by Myriam Thyes | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
 
 ## 2026-11-21 — Quiet press
 
@@ -67,4 +68,23 @@ node presets/render-preview.mjs daily/cuts/2026-11-24-pale-rose
 
 The preview draws Liberation Serif where the editor would draw Playfair Display. The project still names Playfair Display.
 
-Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0.
+## 2026-11-25 — Multi ball
+
+Balls run a Wildwasser pinball playfield while the inserts stay lit.
+
+The picture is 10 seconds starting at 46s, played at 1.05x and 60 fps, so the source used is 10.5 seconds. Preset `playful-gamer` at version `1.1.0`. The first pass parked the acid chip on the lower targets and pushed the orange inserts toward lime. The notes for that change are in the preset changelog. The source audio is the machine in the room, kept under the preset volume.
+
+- Preview: [preview.mp4](cuts/2026-11-25-multi-ball/preview.mp4) (derivative, CC BY-SA 4.0)
+- Project: [project.json](cuts/2026-11-25-multi-ball/project.json)
+- Source file: <https://upload.wikimedia.org/wikipedia/commons/d/df/Pinball-multi-ball.webm>
+- License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)
+
+Re-render from the preset:
+
+```sh
+node presets/render-preview.mjs daily/cuts/2026-11-25-multi-ball
+```
+
+The title is Inter, the same face the preview draws.
+
+Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0. The multi-ball picture and sound stay under CC BY-SA 4.0.

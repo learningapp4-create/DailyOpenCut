@@ -64,6 +64,27 @@
         "preview": "daily/cuts/2026-11-24-pale-rose/preview.mp4",
         "preset": "presets/themes/indie-fashion-cute.jsonc"
       }
+    },
+    {
+      "id": "2026-11-25-multi-ball",
+      "date": "2026-11-25",
+      "theme": "Playful gamer",
+      "presetId": "playful-gamer",
+      "presetVersion": "1.1.0",
+      "shows": "Balls run a Wildwasser pinball playfield while the inserts stay lit.",
+      "footage": {
+        "title": "Pinball-multi-ball",
+        "creator": "Myriam Thyes",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pinball-multi-ball.webm",
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Pinball-multi-ball.webm",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "paths": {
+        "project": "daily/cuts/2026-11-25-multi-ball/project.json",
+        "preview": "daily/cuts/2026-11-25-multi-ball/preview.mp4",
+        "preset": "presets/themes/playful-gamer.jsonc"
+      }
     }
   ]
 }

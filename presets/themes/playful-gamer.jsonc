@@ -5,7 +5,7 @@
   // Stable id a pipeline passes to the editor. Do not rename it.
   "id": "playful-gamer",
   // Semver of this knob set. A daily cut records the version it was made with.
-  "version": "1.0.0",
+  "version": "1.1.0",
   // Browse group on the daily index.
   "category": "play",
   // Human name shown on the index and in the editor.
@@ -80,7 +80,7 @@
     // textAlign.
     "align": "center",
     // Design size. Pixels = fontSize * canvasHeight / 90. Editor range is 5 to 300.
-    "fontSize": 7,
+    "fontSize": 5,
     // letterSpacing. 0 is the editor default.
     "letterSpacing": 1.2,
     // lineHeight multiplier. The editor default is 1.2.
@@ -161,13 +161,13 @@
   // Image treatment on the picture, separate from the palette.
   "grade": {
     // 1 leaves contrast alone. Above 1 adds punch.
-    "contrast": 1.22,
+    "contrast": 1.08,
     // 1 is the original color. 0 is grey.
-    "saturation": 1.28,
+    "saturation": 1.08,
     // Added brightness. 0 is unchanged. Negative crushes.
-    "brightness": 0.02,
+    "brightness": 0,
     // Warmth. 0 is neutral. Positive is warmer.
-    "temperature": -4,
+    "temperature": -1,
     // Midtone gamma. 1 is unchanged. Above 1 lifts mids.
     "gamma": 1.02,
     // Blur effect intensity, 0 to 100. 0 stays sharp.
@@ -181,7 +181,7 @@
       "one more"
     ],
     // Title offset from center as a fraction of height. Positive is down.
-    "positionYFraction": 0.34,
+    "positionYFraction": -0.38,
     // Inset from the side for left or right type, as a fraction of width.
     "safeMarginFraction": 0.06,
     // When true, add a second text element with creditText.
@@ -194,7 +194,7 @@
     // Scale at the first frame.
     "startScale": 1,
     // Scale at the last frame. A small rise is a slow push.
-    "endScale": 1.06,
+    "endScale": 1.03,
     // Vertical drift in output pixels. Negative moves the picture up.
     "positionDriftY": 0,
     // Easing of the scale and drift.
@@ -226,6 +226,11 @@
       "version": "1.0.0",
       // What changed in the knobs, and why.
       "note": "Initial knob set. Cover fit, 60 fps, pop easing, and a short slide between shots."
+    },
+    {
+      "version": "1.1.0",
+      // What changed in the knobs, and why.
+      "note": "The 10s conform of the Wildwasser multi-ball showed the problems. The acid chip at position 0.34 and fontSize 7 sat across the lower playfield and covered the lit targets. Contrast 1.22, saturation 1.28, brightness 0.02, and temperature -4 pushed the orange inserts toward the chip's lime. A 6 percent push on an already tight 9:16 cover ate the side art. 1.1.0 lifts the chip to -0.38 at fontSize 5 so both lines sit in the dark glass, holds the grade at contrast 1.08, saturation 1.08, brightness 0, and temperature -1, and shortens the push to 3 percent. The 60 fps cover and the hard open stay."
     }
   ]
 }
