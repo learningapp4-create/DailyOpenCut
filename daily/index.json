@@ -85,6 +85,27 @@
         "preview": "daily/cuts/2026-11-25-multi-ball/preview.mp4",
         "preset": "presets/themes/playful-gamer.jsonc"
       }
+    },
+    {
+      "id": "2026-11-26-six-step",
+      "date": "2026-11-26",
+      "theme": "Gen Z ADHD",
+      "presetId": "genz-adhd",
+      "presetVersion": "1.0.0",
+      "shows": "A dancer runs the six-step on a studio floor, seen through a fisheye.",
+      "footage": {
+        "title": "Tutorial breakdance - Six Step",
+        "creator": "Neil Sweeney",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tutorial_breakdance_-_Six_Step.webm",
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Tutorial_breakdance_-_Six_Step.webm",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      },
+      "paths": {
+        "project": "daily/cuts/2026-11-26-six-step/project.json",
+        "preview": "daily/cuts/2026-11-26-six-step/preview.mp4",
+        "preset": "presets/themes/genz-adhd.jsonc"
+      }
     }
   ]
 }

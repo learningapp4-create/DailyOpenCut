@@ -10,6 +10,7 @@ Each row is one cut: the theme, the date, what it shows, the footage and its lic
 | 2026-11-21 | Cinematic bars | [cinematic-bars@1.1.0](../presets/themes/cinematic-bars.jsonc) | A drone drifts over morning fog above the village of Vetla, with houses and fields showing through the trees. | [Drone video of foggy Vetla village in Estonia](https://commons.wikimedia.org/wiki/File:Drone_video_of_foggy_Vetla_village_in_Estonia.ogv) by Sillerkiil | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | 2026-11-24 | Indie fashion cute | [indie-fashion-cute@1.1.0](../presets/themes/indie-fashion-cute.jsonc) | A macro lens rests on a yellow rose, and the bloom fills the frame. | [Yellow Rose through a Macro Lens, One](https://commons.wikimedia.org/wiki/File:Yellow_Rose_through_a_Macro_Lens,_One.webm) by Joaquim Baeta | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
 | 2026-11-25 | Playful gamer | [playful-gamer@1.1.0](../presets/themes/playful-gamer.jsonc) | Balls run a Wildwasser pinball playfield while the inserts stay lit. | [Pinball-multi-ball](https://commons.wikimedia.org/wiki/File:Pinball-multi-ball.webm) by Myriam Thyes | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| 2026-11-26 | Gen Z ADHD | [genz-adhd@1.0.0](../presets/themes/genz-adhd.jsonc) | A dancer runs the six-step on a studio floor, seen through a fisheye. | [Tutorial breakdance - Six Step](https://commons.wikimedia.org/wiki/File:Tutorial_breakdance_-_Six_Step.webm) by Neil Sweeney | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) |
 
 ## 2026-11-21 — Quiet press
 
@@ -87,4 +88,23 @@ node presets/render-preview.mjs daily/cuts/2026-11-25-multi-ball
 
 The title is Inter, the same face the preview draws.
 
-Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0. The multi-ball picture and sound stay under CC BY-SA 4.0.
+## 2026-11-26 — Six step
+
+A dancer runs the six-step on a studio floor, seen through a fisheye.
+
+The picture is 10 seconds starting at 38s, played at 1.12x and 30 fps, so the source used is 11.2 seconds. Preset `genz-adhd` at version `1.0.0`. The source file has no audio track, so the preview's audio is silence.
+
+- Preview: [preview.mp4](cuts/2026-11-26-six-step/preview.mp4) (derivative, CC BY 3.0)
+- Project: [project.json](cuts/2026-11-26-six-step/project.json)
+- Source file: <https://upload.wikimedia.org/wikipedia/commons/9/9a/Tutorial_breakdance_-_Six_Step.webm>
+- License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0)
+
+Re-render from the preset:
+
+```sh
+node presets/render-preview.mjs daily/cuts/2026-11-26-six-step
+```
+
+The title is Inter, the same face the preview draws.
+
+Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0. The multi-ball picture and sound stay under CC BY-SA 4.0. The six-step picture stays under CC BY 3.0.

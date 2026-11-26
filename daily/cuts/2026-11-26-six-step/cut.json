@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-26-six-step",
+  "date": "2026-11-26",
+  "title": "Six step",
+  "presetId": "genz-adhd",
+  "inSeconds": 38,
+  "durationSeconds": 10,
+  "lines": ["six step", "keep moving"],
+  "footage": {
+    "mediaId": "commons-tutorial-breakdance-six-step",
+    "title": "Tutorial breakdance - Six Step",
+    "creator": "Neil Sweeney",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tutorial_breakdance_-_Six_Step.webm",
+    "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Tutorial_breakdance_-_Six_Step.webm",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  }
+}

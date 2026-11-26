@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "id": "2026-11-26-six-step",
+    "name": "Six step",
+    "duration": {
+      "ticks": 1200000
+    },
+    "createdAt": "2026-11-26T00:00:00.000Z",
+    "updatedAt": "2026-11-26T00:00:00.000Z"
+  },
+  "settings": {
+    "fps": {
+      "numerator": 30,
+      "denominator": 1
+    },
+    "canvasSize": {
+      "width": 1080,
+      "height": 1920
+    },
+    "canvasSizeMode": "preset",
+    "background": {
+      "type": "color",
+      "color": "#0d0d0f"
+    }
+  },
+  "currentSceneId": "scene-main",
+  "version": 1,
+  "scenes": [
+    {
+      "id": "scene-main",
+      "name": "Main scene",
+      "isMain": true,
+      "bookmarks": [],
+      "createdAt": "2026-11-26T00:00:00.000Z",
+      "updatedAt": "2026-11-26T00:00:00.000Z",
+      "tracks": {
+        "overlay": [
+          {
+            "id": "track-type",
+            "name": "Text track",
+            "type": "text",
+            "hidden": false,
+            "elements": [
+              {
+                "id": "el-title",
+                "type": "text",
+                "name": "Title",
+                "duration": {
+                  "ticks": 1200000
+                },
+                "startTime": {
+                  "ticks": 0
+                },
+                "trimStart": {
+                  "ticks": 0
+                },
+                "trimEnd": {
+                  "ticks": 0
+                },
+                "params": {
+                  "content": "SIX STEP\nKEEP MOVING",
+                  "fontSize": 6.5,
+                  "fontFamily": "Inter",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "fontWeight": "bold",
+                  "fontStyle": "normal",
+                  "textDecoration": "none",
+                  "letterSpacing": -0.4,
+                  "lineHeight": 1,
+                  "background.enabled": true,
+                  "background.color": "#ff4d8d",
+                  "background.cornerRadius": 8,
+                  "background.paddingX": 16,
+                  "background.paddingY": 8,
+                  "background.offsetX": 0,
+                  "background.offsetY": 0,
+                  "transform.positionX": 0,
+                  "transform.positionY": 576,
+                  "transform.scaleX": 1,
+                  "transform.scaleY": 1,
+                  "transform.rotate": 0,
+                  "opacity": 1,
+                  "blendMode": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "main": {
+          "id": "track-main",
+          "name": "Main",
+          "type": "video",
+          "muted": false,
+          "hidden": false,
+          "elements": [
+            {
+              "id": "el-picture",
+              "type": "video",
+              "mediaId": "commons-tutorial-breakdance-six-step",
+              "name": "Tutorial breakdance - Six Step",
+              "duration": {
+                "ticks": 1200000
+              },
+              "startTime": {
+                "ticks": 0
+              },
+              "trimStart": {
+                "ticks": 4560000
+              },
+              "trimEnd": {
+                "ticks": 6876840
+              },
+              "sourceDuration": {
+                "ticks": 12780840
+              },
+              "isSourceAudioEnabled": true,
+              "retime": {
+                "rate": 1.12,
+                "maintainPitch": true
+              },
+              "effects": [
+                {
+                  "id": "fx-grade",
+                  "type": "grade",
+                  "enabled": true,
+                  "params": {
+                    "contrast": 1.16,
+                    "saturation": 1.4,
+                    "brightness": 0.04,
+                    "temperature": 2,
+                    "gamma": 1.05,
+                    "blurIntensity": 0
+                  }
+                }
+              ],
+              "masks": [],
+              "animations": {
+                "opacity": {
+                  "keys": [
+                    {
+                      "id": "opacity-in",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleX": {
+                  "keys": [
+                    {
+                      "id": "scale-x-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-x-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.12,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleY": {
+                  "keys": [
+                    {
+                      "id": "scale-y-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-y-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.12,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                }
+              },
+              "params": {
+                "transform.positionX": 0,
+                "transform.positionY": 0,
+                "transform.scaleX": 1,
+                "transform.scaleY": 1,
+                "transform.rotate": 0,
+                "opacity": 1,
+                "blendMode": "normal",
+                "volume": 1
+              }
+            }
+          ]
+        },
+        "audio": []
+      }
+    }
+  ],
+  "daily": {
+    "format": "daily-opencut-cut",
+    "presetId": "genz-adhd",
+    "presetVersion": "1.0.0",
+    "presetPath": "presets/themes/genz-adhd.jsonc",
+    "fit": "cover",
+    "cropSourceLetterbox": true,
+    "footage": {
+      "mediaId": "commons-tutorial-breakdance-six-step",
+      "title": "Tutorial breakdance - Six Step",
+      "creator": "Neil Sweeney",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tutorial_breakdance_-_Six_Step.webm",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Tutorial_breakdance_-_Six_Step.webm",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    "inSeconds": 38,
+    "durationSeconds": 10,
+    "sourceDurationSeconds": 106.507,
+    "sourceLetterbox": null,
+    "lines": [
+      "SIX STEP",
+      "KEEP MOVING"
+    ],
+    "preview": "daily/cuts/2026-11-26-six-step/preview.mp4",
+    "fontStandIn": "Liberation Serif stands in for Playfair Display in this preview.",
+    "render": "node presets/render-preview.mjs daily/cuts/2026-11-26-six-step"
+  }
+}
