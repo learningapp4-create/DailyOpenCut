@@ -21,7 +21,7 @@ You can still find the previous version at [opencut-app/opencut-classic](https:/
 
 ## Daily cuts
 
-Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). [The GitHub Pages site](https://learningapp4-create.github.io/DailyOpenCut/) is the editor: sign in, drop footage, and describe the cut. The daily cuts, and the prompt each one was given, are under the ? menu. Preset files are in [`presets/`](presets/README.md).
+Theme presets a pipeline can apply, and the ten-second reference cuts made with them, are indexed in [`daily/README.md`](daily/README.md). [The GitHub Pages homepage](https://luac42.github.io/DailyOpenCut/) plays those cuts with no sign-in: each one shows its preview, theme, and a short caption from [`daily/index.json`](daily/index.json). Sign in on that page to open the editor, drop footage, and describe a cut. The same cuts, and the prompt each one was given, stay under the ? menu. Preset files are in [`presets/`](presets/README.md).
 
 ## Development
 

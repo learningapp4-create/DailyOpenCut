@@ -44,12 +44,32 @@
 				white-space: nowrap;
 				border: 0;
 			}
-			.gate {
+			.home {
 				min-height: 100dvh;
-				display: grid;
-				place-items: center;
-				padding: 1.5rem;
+				max-width: 920px;
+				margin: 0 auto;
+				padding: 1.5rem 1.25rem 3rem;
 			}
+			.home-head {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+				gap: 1rem;
+				margin-bottom: 1.4rem;
+			}
+			.home-head h1 { margin: 0.1rem 0 0; font-size: 2.2rem; }
+			.lede { margin: 0.35rem 0 0; max-width: 36rem; color: var(--muted); }
+			.cut-list { display: flex; flex-direction: column; gap: 1.6rem; }
+			.cut {
+				display: grid;
+				grid-template-columns: minmax(180px, 280px) 1fr;
+				gap: 1rem;
+				align-items: start;
+			}
+			.cut video { width: 100%; border-radius: 8px; background: #111; }
+			.cut h2 { margin: 0; font-size: 1.45rem; }
+			.cut p { margin: 0.35rem 0 0; }
+			.signin-card { padding: 1.1rem 1.15rem 1.2rem; }
 			.card {
 				width: min(100%, 22rem);
 				display: flex;
@@ -211,17 +231,30 @@
 			@media (max-width: 860px) {
 				.workspace { grid-template-columns: 1fr; }
 				.chat { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 0.7rem; min-height: 16rem; }
-				.example { grid-template-columns: 1fr; }
+				.example, .cut { grid-template-columns: 1fr; }
 				.app { height: auto; min-height: 100dvh; }
+				.home-head { align-items: flex-start; flex-direction: column; }
 			}
 		</style>
 	</head>
 	<body>
-		<section id="gate" class="gate">
-			<form id="signin" class="card">
+		<section id="gate" class="home">
+			<header class="home-head">
 				<div>
 					<p class="eyebrow">OpenCut</p>
-					<h1>Sign in</h1>
+					<h1>Daily 10s cuts</h1>
+					<p id="lede" class="lede">Ten-second reference edits. Play one, then sign in to cut your own.</p>
+				</div>
+				<button id="open-signin" class="primary" type="button">Sign in</button>
+			</header>
+			<div id="public-cuts" class="cut-list"></div>
+		</section>
+
+		<dialog id="signin-dialog">
+			<form id="signin" class="card signin-card">
+				<div>
+					<p class="eyebrow">OpenCut</p>
+					<h2 class="serif" style="margin:0.1rem 0 0;font-size:2rem">Sign in</h2>
 				</div>
 				<label>
 					Username
@@ -232,9 +265,12 @@
 					<input id="password" name="password" type="password" autocomplete="current-password" required />
 				</label>
 				<p id="signin-error" class="error" role="alert"></p>
-				<button class="primary" type="submit">Sign in</button>
+				<div style="display:flex; gap:0.5rem">
+					<button class="primary" type="submit">Sign in</button>
+					<button id="close-signin" class="ghost" type="button">Close</button>
+				</div>
 			</form>
-		</section>
+		</dialog>
 
 		<div id="studio" class="app" hidden>
 			<header class="top">
@@ -374,6 +410,9 @@
 			}
 
 			function showStudio() {
+				for (const video of document.querySelectorAll("#public-cuts video")) video.pause()
+				const signinDialog = document.getElementById("signin-dialog")
+				if (signinDialog.open) signinDialog.close()
 				gate.hidden = true
 				studio.hidden = false
 				help.hidden = false
@@ -386,6 +425,7 @@
 				menu.hidden = true
 				help.setAttribute("aria-expanded", "false")
 				gate.hidden = false
+				if (!document.querySelector("#public-cuts article")) showPublicCuts()
 			}
 
 			document.getElementById("signin").addEventListener("submit", (event) => {
@@ -400,6 +440,14 @@
 				error.textContent = ""
 				localStorage.setItem(SESSION, username)
 				showStudio()
+			})
+
+			document.getElementById("open-signin").addEventListener("click", () => {
+				document.getElementById("signin-error").textContent = ""
+				document.getElementById("signin-dialog").showModal()
+			})
+			document.getElementById("close-signin").addEventListener("click", () => {
+				document.getElementById("signin-dialog").close()
 			})
 
 			function poeKey() {
@@ -445,56 +493,90 @@
 				else localStorage.removeItem(KEY_STORE)
 			})
 
+			async function loadCuts() {
+				try {
+					const response = await fetch("daily/index.json")
+					if (!response.ok) throw new Error("daily index")
+					const index = await response.json()
+					const about = document.getElementById("lede")
+					if (about && index.about) about.textContent = index.about
+					const cuts = Array.isArray(index.cuts) ? index.cuts : []
+					if (cuts.length) return cuts
+				} catch (error) {
+					console.error(error)
+				}
+				return [
+					{
+						id: "2026-11-21-quiet-press",
+						theme: "Minimalistic homie",
+						shows: "A hand lifts a French press and pours coffee into a red mug on a kitchen counter.",
+						paths: { preview: "daily/cuts/2026-11-21-quiet-press/preview.mp4" },
+					},
+					{
+						id: "2026-11-21-fog-hold",
+						theme: "Cinematic bars",
+						shows: "A drone drifts over morning fog above the village of Vetla.",
+						paths: { preview: "daily/cuts/2026-11-21-fog-hold/preview.mp4" },
+					},
+					{
+						id: "2026-11-24-pale-rose",
+						theme: "Indie fashion cute",
+						shows: "A macro lens rests on a yellow rose, and the bloom fills the frame.",
+						paths: { preview: "daily/cuts/2026-11-24-pale-rose/preview.mp4" },
+					},
+					{
+						id: "2026-11-25-multi-ball",
+						theme: "Playful gamer",
+						shows: "Balls run a Wildwasser pinball playfield while the inserts stay lit.",
+						paths: { preview: "daily/cuts/2026-11-25-multi-ball/preview.mp4" },
+					},
+					{
+						id: "2026-11-26-six-step",
+						theme: "Gen Z ADHD",
+						shows: "A dancer runs the six-step on a studio floor, seen through a fisheye.",
+						paths: { preview: "daily/cuts/2026-11-26-six-step/preview.mp4" },
+					},
+				]
+			}
+
+			function previewVideo(cut) {
+				const video = document.createElement("video")
+				video.controls = true
+				video.playsInline = true
+				video.preload = "metadata"
+				const src = cut.paths?.preview || ""
+				video.poster = src.replace(/preview\.mp4$/, "poster.jpg")
+				video.src = src
+				const label = cut.theme || cut.id || "Daily cut"
+				video.setAttribute("aria-label", label)
+				return video
+			}
+
+			async function showPublicCuts() {
+				const list = document.getElementById("public-cuts")
+				list.replaceChildren(el("p", "muted", "Loading the daily cuts…"))
+				const cuts = await loadCuts()
+				list.replaceChildren()
+				for (const cut of cuts) {
+					const article = el("article", "cut")
+					const copy = el("div")
+					copy.append(el("h2", "serif", cut.theme || cut.id))
+					if (cut.shows) copy.append(el("p", null, cut.shows))
+					article.append(previewVideo(cut), copy)
+					list.append(article)
+				}
+			}
+
 			async function openExamples() {
 				const list = document.getElementById("example-list")
 				list.replaceChildren(el("p", "muted", "Loading the daily cuts…"))
 				document.getElementById("examples").showModal()
-				let cuts = []
-				try {
-					const response = await fetch("daily/index.json")
-					const index = await response.json()
-					cuts = Array.isArray(index.cuts) ? index.cuts : []
-				} catch (error) {
-					console.error(error)
-				}
-				if (cuts.length === 0) {
-					cuts = [
-						{
-							id: "2026-11-21-quiet-press",
-							theme: "Minimalistic homie",
-							shows: "A hand lifts a French press and pours coffee into a red mug on a kitchen counter.",
-							paths: { preview: "daily/cuts/2026-11-21-quiet-press/preview.mp4" },
-						},
-						{
-							id: "2026-11-21-fog-hold",
-							theme: "Cinematic bars",
-							shows: "A drone drifts over morning fog above the village of Vetla.",
-							paths: { preview: "daily/cuts/2026-11-21-fog-hold/preview.mp4" },
-						},
-						{
-							id: "2026-11-24-pale-rose",
-							theme: "Indie fashion cute",
-							shows: "A macro lens rests on a yellow rose, and the bloom fills the frame.",
-							paths: { preview: "daily/cuts/2026-11-24-pale-rose/preview.mp4" },
-						},
-						{
-							id: "2026-11-25-multi-ball",
-							theme: "Playful gamer",
-							shows: "Balls run a Wildwasser pinball playfield while the inserts stay lit.",
-							paths: { preview: "daily/cuts/2026-11-25-multi-ball/preview.mp4" },
-						},
-					]
-				}
+				const cuts = await loadCuts()
 				list.replaceChildren()
 				for (const cut of cuts) {
 					const known = knownExamples[cut.id] || {}
 					const article = el("article", "example")
-					const video = document.createElement("video")
-					video.controls = true
-					video.playsInline = true
-					video.preload = "metadata"
-					video.poster = (cut.paths?.preview || "").replace(/preview\.mp4$/, "poster.jpg")
-					video.src = cut.paths?.preview || ""
+					const video = previewVideo(cut)
 					const copy = el("div")
 					copy.append(el("h3", "serif", cut.theme || cut.id))
 					if (cut.shows) copy.append(el("p", null, cut.shows))
