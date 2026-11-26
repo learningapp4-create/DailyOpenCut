@@ -410,12 +410,12 @@
 			}
 
 			function showStudio() {
-				for (const video of document.querySelectorAll("#public-cuts video")) video.pause()
 				const signinDialog = document.getElementById("signin-dialog")
 				if (signinDialog.open) signinDialog.close()
-				gate.hidden = true
+				gate.hidden = false
 				studio.hidden = false
 				help.hidden = false
+				document.getElementById("open-signin").hidden = true
 				document.getElementById("who").textContent = ACCOUNT.username
 			}
 
@@ -425,6 +425,7 @@
 				menu.hidden = true
 				help.setAttribute("aria-expanded", "false")
 				gate.hidden = false
+				document.getElementById("open-signin").hidden = false
 				if (!document.querySelector("#public-cuts article")) showPublicCuts()
 			}
 
@@ -552,9 +553,16 @@
 				return video
 			}
 
+			let publicCutsLoading = null
 			async function showPublicCuts() {
+				if (publicCutsLoading) return publicCutsLoading
 				const list = document.getElementById("public-cuts")
 				list.replaceChildren(el("p", "muted", "Loading the daily cuts…"))
+				publicCutsLoading = renderPublicCuts(list)
+				return publicCutsLoading
+			}
+
+			async function renderPublicCuts(list) {
 				const cuts = await loadCuts()
 				list.replaceChildren()
 				for (const cut of cuts) {
@@ -964,6 +972,7 @@
 				}
 			})
 
+			showPublicCuts()
 			if (signedIn()) showStudio()
 			else showGate()
 		</script>
