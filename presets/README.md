@@ -9,6 +9,7 @@ node presets/render-preview.mjs daily/cuts/2026-11-21-fog-hold
 node presets/render-preview.mjs daily/cuts/2026-11-24-pale-rose
 node presets/render-preview.mjs daily/cuts/2026-11-25-multi-ball
 node presets/render-preview.mjs daily/cuts/2026-11-26-six-step
+node presets/render-preview.mjs daily/cuts/2026-11-27-gel-ink
 ```
 
 ## How a preset lands in a project

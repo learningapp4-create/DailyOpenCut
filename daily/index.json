@@ -106,6 +106,27 @@
         "preview": "daily/cuts/2026-11-26-six-step/preview.mp4",
         "preset": "presets/themes/genz-adhd.jsonc"
       }
+    },
+    {
+      "id": "2026-11-27-gel-ink",
+      "date": "2026-11-27",
+      "theme": "OpenCut editorial",
+      "presetId": "opencut-editorial",
+      "presetVersion": "1.0.0",
+      "shows": "A hand draws a short line with a gel pen on a pink index card.",
+      "footage": {
+        "title": "Aerra's Films of the Ordinary XII -- Muji Smooth Gel Ink Pen",
+        "creator": "Aerra Carnicom",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerra's_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm",
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Aerra%27s_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "paths": {
+        "project": "daily/cuts/2026-11-27-gel-ink/project.json",
+        "preview": "daily/cuts/2026-11-27-gel-ink/preview.mp4",
+        "preset": "presets/themes/opencut-editorial.jsonc"
+      }
     }
   ]
 }

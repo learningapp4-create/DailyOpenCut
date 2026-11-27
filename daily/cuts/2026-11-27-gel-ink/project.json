@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "id": "2026-11-27-gel-ink",
+    "name": "Gel ink",
+    "duration": {
+      "ticks": 1200000
+    },
+    "createdAt": "2026-11-27T00:00:00.000Z",
+    "updatedAt": "2026-11-27T00:00:00.000Z"
+  },
+  "settings": {
+    "fps": {
+      "numerator": 30,
+      "denominator": 1
+    },
+    "canvasSize": {
+      "width": 1920,
+      "height": 1080
+    },
+    "canvasSizeMode": "preset",
+    "background": {
+      "type": "color",
+      "color": "#ffffff"
+    }
+  },
+  "currentSceneId": "scene-main",
+  "version": 1,
+  "scenes": [
+    {
+      "id": "scene-main",
+      "name": "Main scene",
+      "isMain": true,
+      "bookmarks": [],
+      "createdAt": "2026-11-27T00:00:00.000Z",
+      "updatedAt": "2026-11-27T00:00:00.000Z",
+      "tracks": {
+        "overlay": [
+          {
+            "id": "track-type",
+            "name": "Text track",
+            "type": "text",
+            "hidden": false,
+            "elements": [
+              {
+                "id": "el-title",
+                "type": "text",
+                "name": "Title",
+                "duration": {
+                  "ticks": 1200000
+                },
+                "startTime": {
+                  "ticks": 0
+                },
+                "trimStart": {
+                  "ticks": 0
+                },
+                "trimEnd": {
+                  "ticks": 0
+                },
+                "params": {
+                  "content": "gel ink\na thin line",
+                  "fontSize": 6,
+                  "fontFamily": "Playfair Display",
+                  "color": "#252525",
+                  "textAlign": "left",
+                  "fontWeight": "normal",
+                  "fontStyle": "normal",
+                  "textDecoration": "none",
+                  "letterSpacing": 0,
+                  "lineHeight": 1.15,
+                  "background.enabled": false,
+                  "background.color": "#ffffff",
+                  "background.cornerRadius": 0,
+                  "background.paddingX": 12,
+                  "background.paddingY": 8,
+                  "background.offsetX": 0,
+                  "background.offsetY": 0,
+                  "transform.positionX": 0,
+                  "transform.positionY": -302,
+                  "transform.scaleX": 1,
+                  "transform.scaleY": 1,
+                  "transform.rotate": 0,
+                  "opacity": 1,
+                  "blendMode": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "main": {
+          "id": "track-main",
+          "name": "Main",
+          "type": "video",
+          "muted": false,
+          "hidden": false,
+          "elements": [
+            {
+              "id": "el-picture",
+              "type": "video",
+              "mediaId": "commons-aerra-muji-gel-ink-pen",
+              "name": "Aerra's Films of the Ordinary XII -- Muji Smooth Gel Ink Pen",
+              "duration": {
+                "ticks": 1200000
+              },
+              "startTime": {
+                "ticks": 0
+              },
+              "trimStart": {
+                "ticks": 480000
+              },
+              "trimEnd": {
+                "ticks": 60000
+              },
+              "sourceDuration": {
+                "ticks": 1740000
+              },
+              "isSourceAudioEnabled": true,
+              "retime": {
+                "rate": 1,
+                "maintainPitch": true
+              },
+              "effects": [
+                {
+                  "id": "fx-grade",
+                  "type": "grade",
+                  "enabled": true,
+                  "params": {
+                    "contrast": 1.04,
+                    "saturation": 0.15,
+                    "brightness": 0,
+                    "temperature": 0,
+                    "gamma": 1,
+                    "blurIntensity": 0
+                  }
+                }
+              ],
+              "masks": [],
+              "animations": {
+                "opacity": {
+                  "keys": [
+                    {
+                      "id": "opacity-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-in",
+                      "time": {
+                        "ticks": 48000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-hold",
+                      "time": {
+                        "ticks": 1152000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-out",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleX": {
+                  "keys": [
+                    {
+                      "id": "scale-x-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-x-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.02,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleY": {
+                  "keys": [
+                    {
+                      "id": "scale-y-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-y-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.02,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                }
+              },
+              "params": {
+                "transform.positionX": 0,
+                "transform.positionY": 0,
+                "transform.scaleX": 1,
+                "transform.scaleY": 1,
+                "transform.rotate": 0,
+                "opacity": 1,
+                "blendMode": "normal",
+                "volume": 0.5
+              }
+            }
+          ]
+        },
+        "audio": []
+      }
+    }
+  ],
+  "daily": {
+    "format": "daily-opencut-cut",
+    "presetId": "opencut-editorial",
+    "presetVersion": "1.0.0",
+    "presetPath": "presets/themes/opencut-editorial.jsonc",
+    "fit": "contain",
+    "cropSourceLetterbox": true,
+    "footage": {
+      "mediaId": "commons-aerra-muji-gel-ink-pen",
+      "title": "Aerra's Films of the Ordinary XII -- Muji Smooth Gel Ink Pen",
+      "creator": "Aerra Carnicom",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerra's_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Aerra%27s_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "inSeconds": 4,
+    "durationSeconds": 10,
+    "sourceDurationSeconds": 14.5,
+    "sourceLetterbox": null,
+    "lines": [
+      "gel ink",
+      "a thin line"
+    ],
+    "preview": "daily/cuts/2026-11-27-gel-ink/preview.mp4",
+    "fontStandIn": "Liberation Serif stands in for Playfair Display in this preview.",
+    "render": "node presets/render-preview.mjs daily/cuts/2026-11-27-gel-ink"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-27-gel-ink",
+  "date": "2026-11-27",
+  "title": "Gel ink",
+  "presetId": "opencut-editorial",
+  "inSeconds": 4,
+  "durationSeconds": 10,
+  "lines": ["gel ink", "a thin line"],
+  "footage": {
+    "mediaId": "commons-aerra-muji-gel-ink-pen",
+    "title": "Aerra's Films of the Ordinary XII -- Muji Smooth Gel Ink Pen",
+    "creator": "Aerra Carnicom",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerra's_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm",
+    "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Aerra%27s_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+}
