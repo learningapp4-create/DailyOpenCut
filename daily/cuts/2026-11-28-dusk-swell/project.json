@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "id": "2026-11-28-dusk-swell",
+    "name": "Dusk swell",
+    "duration": {
+      "ticks": 1200000
+    },
+    "createdAt": "2026-11-28T00:00:00.000Z",
+    "updatedAt": "2026-11-28T00:00:00.000Z"
+  },
+  "settings": {
+    "fps": {
+      "numerator": 24,
+      "denominator": 1
+    },
+    "canvasSize": {
+      "width": 1920,
+      "height": 1080
+    },
+    "canvasSizeMode": "preset",
+    "background": {
+      "type": "color",
+      "color": "#0a0a0a"
+    }
+  },
+  "currentSceneId": "scene-main",
+  "version": 1,
+  "scenes": [
+    {
+      "id": "scene-main",
+      "name": "Main scene",
+      "isMain": true,
+      "bookmarks": [],
+      "createdAt": "2026-11-28T00:00:00.000Z",
+      "updatedAt": "2026-11-28T00:00:00.000Z",
+      "tracks": {
+        "overlay": [
+          {
+            "id": "track-type",
+            "name": "Text track",
+            "type": "text",
+            "hidden": false,
+            "elements": [
+              {
+                "id": "el-title",
+                "type": "text",
+                "name": "Title",
+                "duration": {
+                  "ticks": 1200000
+                },
+                "startTime": {
+                  "ticks": 0
+                },
+                "trimStart": {
+                  "ticks": 0
+                },
+                "trimEnd": {
+                  "ticks": 0
+                },
+                "params": {
+                  "content": "DUSK SWELL\nON THE WATER",
+                  "fontSize": 5,
+                  "fontFamily": "Playfair Display",
+                  "color": "#f2f2f2",
+                  "textAlign": "center",
+                  "fontWeight": "normal",
+                  "fontStyle": "normal",
+                  "textDecoration": "none",
+                  "letterSpacing": 1.4,
+                  "lineHeight": 1.1,
+                  "background.enabled": false,
+                  "background.color": "#0a0a0a",
+                  "background.cornerRadius": 0,
+                  "background.paddingX": 12,
+                  "background.paddingY": 8,
+                  "background.offsetX": 0,
+                  "background.offsetY": 0,
+                  "transform.positionX": 0,
+                  "transform.positionY": 302,
+                  "transform.scaleX": 1,
+                  "transform.scaleY": 1,
+                  "transform.rotate": 0,
+                  "opacity": 1,
+                  "blendMode": "normal"
+                }
+              }
+            ]
+          }
+        ],
+        "main": {
+          "id": "track-main",
+          "name": "Main",
+          "type": "video",
+          "muted": false,
+          "hidden": false,
+          "elements": [
+            {
+              "id": "el-picture",
+              "type": "video",
+              "mediaId": "commons-ocean-surface-waves-08",
+              "name": "Ocean surface waves 08",
+              "duration": {
+                "ticks": 1200000
+              },
+              "startTime": {
+                "ticks": 0
+              },
+              "trimStart": {
+                "ticks": 480000
+              },
+              "trimEnd": {
+                "ticks": 259200
+              },
+              "sourceDuration": {
+                "ticks": 1939200
+              },
+              "isSourceAudioEnabled": true,
+              "retime": {
+                "rate": 1,
+                "maintainPitch": true
+              },
+              "effects": [
+                {
+                  "id": "fx-grade",
+                  "type": "grade",
+                  "enabled": true,
+                  "params": {
+                    "contrast": 1.06,
+                    "saturation": 0.88,
+                    "brightness": 0.02,
+                    "temperature": 1,
+                    "gamma": 1.03,
+                    "blurIntensity": 0
+                  }
+                }
+              ],
+              "masks": [
+                {
+                  "id": "mask-frame",
+                  "type": "cinematic-bars",
+                  "params": {
+                    "centerX": 0,
+                    "centerY": 0,
+                    "width": 1,
+                    "height": 0.74,
+                    "rotation": 0,
+                    "scale": 1,
+                    "feather": 12,
+                    "inverted": false,
+                    "strokeColor": "#ffffff",
+                    "strokeWidth": 0,
+                    "strokeAlign": "center"
+                  }
+                }
+              ],
+              "animations": {
+                "opacity": {
+                  "keys": [
+                    {
+                      "id": "opacity-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-in",
+                      "time": {
+                        "ticks": 54000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-hold",
+                      "time": {
+                        "ticks": 1140000
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "opacity-out",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 0,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleX": {
+                  "keys": [
+                    {
+                      "id": "scale-x-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-x-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.05,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                },
+                "transform.scaleY": {
+                  "keys": [
+                    {
+                      "id": "scale-y-0",
+                      "time": {
+                        "ticks": 0
+                      },
+                      "value": 1,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    },
+                    {
+                      "id": "scale-y-1",
+                      "time": {
+                        "ticks": 1200000
+                      },
+                      "value": 1.05,
+                      "segmentToNext": "linear",
+                      "tangentMode": "auto"
+                    }
+                  ],
+                  "extrapolation": {
+                    "before": "hold",
+                    "after": "hold"
+                  }
+                }
+              },
+              "params": {
+                "transform.positionX": 0,
+                "transform.positionY": -12,
+                "transform.scaleX": 1,
+                "transform.scaleY": 1,
+                "transform.rotate": 0,
+                "opacity": 1,
+                "blendMode": "normal",
+                "volume": 0.6
+              }
+            }
+          ]
+        },
+        "audio": []
+      }
+    }
+  ],
+  "daily": {
+    "format": "daily-opencut-cut",
+    "presetId": "cinematic-bars",
+    "presetVersion": "1.1.0",
+    "presetPath": "presets/themes/cinematic-bars.jsonc",
+    "fit": "cover",
+    "cropSourceLetterbox": true,
+    "footage": {
+      "mediaId": "commons-ocean-surface-waves-08",
+      "title": "Ocean surface waves 08",
+      "creator": "Mostafameraji",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_08.ogv",
+      "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Ocean_surface_waves_08.ogv",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "inSeconds": 4,
+    "durationSeconds": 10,
+    "sourceDurationSeconds": 16.16,
+    "sourceLetterbox": null,
+    "lines": [
+      "DUSK SWELL",
+      "ON THE WATER"
+    ],
+    "preview": "daily/cuts/2026-11-28-dusk-swell/preview.mp4",
+    "fontStandIn": "Liberation Serif stands in for Playfair Display in this preview.",
+    "render": "node presets/render-preview.mjs daily/cuts/2026-11-28-dusk-swell"
+  }
+}

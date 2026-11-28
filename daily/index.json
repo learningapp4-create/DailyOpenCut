@@ -127,6 +127,27 @@
         "preview": "daily/cuts/2026-11-27-gel-ink/preview.mp4",
         "preset": "presets/themes/opencut-editorial.jsonc"
       }
+    },
+    {
+      "id": "2026-11-28-dusk-swell",
+      "date": "2026-11-28",
+      "theme": "Cinematic bars",
+      "presetId": "cinematic-bars",
+      "presetVersion": "1.1.0",
+      "shows": "A pink sun sits over the sea while swells roll through the last light.",
+      "footage": {
+        "title": "Ocean surface waves 08",
+        "creator": "Mostafameraji",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_08.ogv",
+        "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Ocean_surface_waves_08.ogv",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "paths": {
+        "project": "daily/cuts/2026-11-28-dusk-swell/project.json",
+        "preview": "daily/cuts/2026-11-28-dusk-swell/preview.mp4",
+        "preset": "presets/themes/cinematic-bars.jsonc"
+      }
     }
   ]
 }

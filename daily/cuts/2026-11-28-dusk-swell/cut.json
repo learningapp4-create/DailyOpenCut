@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-28-dusk-swell",
+  "date": "2026-11-28",
+  "title": "Dusk swell",
+  "presetId": "cinematic-bars",
+  "inSeconds": 4,
+  "durationSeconds": 10,
+  "lines": ["dusk swell", "on the water"],
+  "footage": {
+    "mediaId": "commons-ocean-surface-waves-08",
+    "title": "Ocean surface waves 08",
+    "creator": "Mostafameraji",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_08.ogv",
+    "fileUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Ocean_surface_waves_08.ogv",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  }
+}

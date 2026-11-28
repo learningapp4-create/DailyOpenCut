@@ -12,6 +12,7 @@ Each row is one cut: the theme, the date, what it shows, the footage and its lic
 | 2026-11-25 | Playful gamer | [playful-gamer@1.1.0](../presets/themes/playful-gamer.jsonc) | Balls run a Wildwasser pinball playfield while the inserts stay lit. | [Pinball-multi-ball](https://commons.wikimedia.org/wiki/File:Pinball-multi-ball.webm) by Myriam Thyes | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
 | 2026-11-26 | Gen Z ADHD | [genz-adhd@1.0.0](../presets/themes/genz-adhd.jsonc) | A dancer runs the six-step on a studio floor, seen through a fisheye. | [Tutorial breakdance - Six Step](https://commons.wikimedia.org/wiki/File:Tutorial_breakdance_-_Six_Step.webm) by Neil Sweeney | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) |
 | 2026-11-27 | OpenCut editorial | [opencut-editorial@1.0.0](../presets/themes/opencut-editorial.jsonc) | A hand draws a short line with a gel pen on a pink index card. | [Aerra's Films of the Ordinary XII -- Muji Smooth Gel Ink Pen](https://commons.wikimedia.org/wiki/File:Aerra's_Films_of_the_Ordinary_XII_--_Muji_Smooth_Gel_Ink_Pen.webm) by Aerra Carnicom | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) |
+| 2026-11-28 | Cinematic bars | [cinematic-bars@1.1.0](../presets/themes/cinematic-bars.jsonc) | A pink sun sits over the sea while swells roll through the last light. | [Ocean surface waves 08](https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_08.ogv) by Mostafameraji | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 ## 2026-11-21 — Quiet press
 
@@ -127,4 +128,23 @@ node presets/render-preview.mjs daily/cuts/2026-11-27-gel-ink
 
 The preview draws Liberation Serif where the editor would draw Playfair Display. The project still names Playfair Display.
 
-Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0. The multi-ball picture and sound stay under CC BY-SA 4.0. The six-step picture stays under CC BY 3.0. The gel-ink picture and sound stay under CC BY-SA 4.0.
+## 2026-11-28 — Dusk swell
+
+A pink sun sits over the sea while swells roll through the last light.
+
+The picture is 10 seconds starting at 4s, played at 1x and 24 fps. Preset `cinematic-bars` at version `1.1.0`. The title sits in the open window, above the lower bar. The source file has no audio track, so the preview's audio is silence.
+
+- Preview: [preview.mp4](cuts/2026-11-28-dusk-swell/preview.mp4) (derivative, CC0 1.0)
+- Project: [project.json](cuts/2026-11-28-dusk-swell/project.json)
+- Source file: <https://upload.wikimedia.org/wikipedia/commons/a/a2/Ocean_surface_waves_08.ogv>
+- License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+Re-render from the preset:
+
+```sh
+node presets/render-preview.mjs daily/cuts/2026-11-28-dusk-swell
+```
+
+The preview draws Liberation Serif where the editor would draw Playfair Display. The project still names Playfair Display.
+
+Theme knobs live in [presets/](../presets/README.md). The repository code is MIT. The quiet-press picture and sound stay under CC BY-SA 3.0. The fog-hold picture is CC0 1.0. The pale-rose picture and sound stay under CC BY 4.0. The multi-ball picture and sound stay under CC BY-SA 4.0. The six-step picture stays under CC BY 3.0. The gel-ink picture and sound stay under CC BY-SA 4.0. The dusk-swell picture is CC0 1.0.
